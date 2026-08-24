@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renovera360 | Vi gör jobbet – så du får tid över</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080b08;
+      color: white;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 8, 5, 0.96);
+      border-bottom: 1px solid #68a900;
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      color: white;
+    }
+
+    .logo span {
+      color: #70ad11;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #7dbd17;
+    }
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.88)),
+        radial-gradient(circle at top right, #304d0b, #070907 60%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+      padding: 70px 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #7dbd17;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      font-size: 21px;
+      color: #ddd;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: #70ad11;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #86ca18;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 2px solid #70ad11;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: #70ad11;
+    }
+
+    .benefits {
+      background: #101510;
+      border-top: 1px solid #24331a;
+      border-bottom: 1px solid #24331a;
+    }
+
+    .benefit-grid {
+      padding: 25px 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      text-align: center;
+    }
+
+    .benefit {
+      font-weight: 700;
+      color: #eee;
+    }
+
+    .benefit span {
+      color: #79b817;
+      margin-right: 6px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 40px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #bbb;
+      max-width: 700px;
+      margin: 0 auto 45px;
+    }
+
+    .services {
+      background: #0b0f0b;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #141914, #0b0e0b);
+      border: 1px solid #26351d;
+      padding: 30px;
+      border-radius: 16px;
+      transition: .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #70ad11;
+    }
+
+    .icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #aaa;
+      min-height: 70px;
+    }
+
+    .price {
+      color: #7dbd17;
+      font-size: 22px;
+      font-weight: 800;
+      margin-top: 18px;
+    }
+
+    .about {
+      background: #101410;
+    }
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-box p {
+      color: #c7c7c7;
+      font-size: 18px;
+    }
+
+    .contact {
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.95)),
+        radial-gradient(circle, #263e0b, #090b09 65%);
+    }
+
+    .contact-box {
+      max-width: 750px;
+      margin: auto;
+      background: #101510;
+      border: 1px solid #33491f;
+      border-radius: 18px;
+      padding: 40px 25px;
+    }
+
+    .contact-box h2 {
+      font-size: 38px;
+      color: #7dbd17;
+      margin-bottom: 8px;
+    }
+
+    .contact-box p {
+      color: #bbb;
+      margin-bottom: 25px;
+    }
+
+    .contact-info {
+      margin: 25px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .contact-info a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #888;
+      background: #050705;
+      border-top: 1px solid #1e2918;
+    }
+
+    @media (max-width: 850px) {
+      nav ul {
+        display: none;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr 1fr;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">RENOVERA<span>360</span></div>
+
+      <ul>
+        <li><a href="#tjanster">Tjänster</a></li>
+        <li><a href="#omoss">Om oss</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-content">
+    <h1>
+      VI GÖR JOBBET<br>
+      <span>SÅ DU FÅR TID ÖVER</span>
+    </h1>
+
+    <p>
+      Pålitlig hjälp med trädgård, städning, fönsterputs,
+      biltvätt och flytthjälp. Snabbt, enkelt och professionellt.
+    </p>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="#kontakt">
+        BEGÄR KOSTNADSFRI OFFERT
+      </a>
+
+      <a class="btn btn-outline" href="tel:+46763964804">
+        RING OSS
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<div class="benefits">
+  <div class="container benefit-grid">
+    <div class="benefit"><span>✓</span>Punktliga</div>
+    <div class="benefit"><span>✓</span>Hög kvalitet</div>
+    <div class="benefit"><span>✓</span>Bra priser</div>
+    <div class="benefit"><span>✓</span>Kostnadsfri offert</div>
+  </div>
+</div>
+
+
+<section class="services" id="tjanster">
+  <div class="container">
+
+    <h2 class="section-title">Våra tjänster</h2>
+
+    <p class="section-subtitle">
+      Vi erbjuder praktisk hjälp för både hem och trädgård.
+      Kontakta oss för ett pris anpassat efter just ditt jobb.
+    </p>
+
+    <div class="service-grid">
+
+      <div class="card">
+        <div class="icon">🌿</div>
+        <h3>Gräsklippning</h3>
+        <p>
+          Vi håller gräsmattan välskött och snygg under hela säsongen.
+        </p>
+        <div class="price">Från 399 kr</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">✂️</div>
+        <h3>Häckklippning</h3>
+        <p>
+          Noggrann klippning och putsning för en välskött trädgård.
+        </p>
+        <div class="price">Från 899 kr</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🪟</div>
+        <h3>Fönsterputsning</h3>
+        <p>
+          Professionell fönsterputsning för ett skinande rent resultat.
+        </p>
+        <div class="price">Från 699 kr</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🚗</div>
+        <h3>Biltvätt</h3>
+        <p>
+          Vi hjälper dig att få bilen ren och fräsch utan krångel.
+        </p>
+        <div class="price">Från 399 kr</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">📦</div>
+        <h3>Flytthjälp</h3>
+        <p>
+          Smidig och pålitlig hjälp när du behöver flytta.
+        </p>
+        <div class="price">Från 699 kr/timme</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧹</div>
+        <h3>Städning</h3>
+        <p>
+          Noggrann städning för ett rent, fräscht och trivsamt hem.
+        </p>
+        <div class="price">Från 599 kr</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="about" id="omoss">
+  <div class="container about-box">
+
+    <h2 class="section-title">Varför Renovera360?</h2>
+
+    <p>
+      Vi vill göra vardagen enklare för våra kunder. Därför erbjuder vi
+      flera tjänster på ett och samma ställe med fokus på bra service,
+      kvalitet och tydlig kommunikation. Du berättar vad du behöver hjälp
+      med – vi tar hand om resten.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="contact" id="kontakt">
+  <div class="container">
+
+    <div class="contact-box">
+
+      <h2>Kontakta oss idag!</h2>
+
+      <p>
+        Berätta vad du behöver hjälp med så återkommer vi med en
+        kostnadsfri offert.
+      </p>
+
+      <div class="contact-info">
+
+        <a href="tel:+46763964804">
+          📞 076 396 48 04
+        </a>
+
+        <a href="mailto:hazem@renoverar360.se">
+          ✉️ hazem@renoverar360.se
+        </a>
+
+      </div>
+
+      <a class="btn btn-primary"
+         href="mailto:hazem@renoverar360.se?subject=Förfrågan om kostnadsfri offert">
+        BEGÄR OFFERT
+      </a>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<footer>
+  © 2026 Renovera360 • Alla rättigheter förbehållna
+</footer>
+
+</body>
+</html>
