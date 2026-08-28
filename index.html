@@ -6,7 +6,10 @@
 
   <title>Renovera360 | Städ, trädgård, flytthjälp och mer</title>
 
-  <meta name="description" content="Renovera360 erbjuder städning, gräsklippning, häckklippning, fönsterputsning, biltvätt och flytthjälp. Begär en kostnadsfri offert idag.">
+  <meta
+    name="description"
+    content="Renovera360 erbjuder städning, gräsklippning, häckklippning, fönsterputsning, biltvätt och flytthjälp. Begär en kostnadsfri offert idag."
+  />
 
   <style>
     :root {
@@ -78,6 +81,8 @@
       font-size: 18px;
     }
 
+    /* HEADER */
+
     header {
       position: sticky;
       top: 0;
@@ -135,35 +140,66 @@
       background: var(--green-light);
     }
 
+    /* HERO */
+
     .hero {
       min-height: 720px;
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
+
       background:
-        radial-gradient(circle at 80% 20%, rgba(98, 150, 20, 0.25), transparent 33%),
-        radial-gradient(circle at 15% 70%, rgba(63, 98, 14, 0.20), transparent 35%),
-        linear-gradient(145deg, #060806, #111711 62%, #070907);
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(98, 150, 20, 0.25),
+          transparent 33%
+        ),
+        radial-gradient(
+          circle at 15% 70%,
+          rgba(63, 98, 14, 0.20),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #060806,
+          #111711 62%,
+          #070907
+        );
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
+
       background:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+        linear-gradient(
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        );
+
       background-size: 45px 45px;
-      mask-image: linear-gradient(to bottom, black, transparent 90%);
+      mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+      );
     }
 
     .hero-grid {
       position: relative;
       z-index: 2;
+
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
+
       gap: 60px;
       padding: 90px 0;
     }
@@ -172,13 +208,17 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+
       padding: 9px 14px;
       border-radius: 999px;
+
       border: 1px solid #35521c;
       background: rgba(123, 181, 27, 0.08);
+
       color: #dff6bb;
       font-size: 14px;
       font-weight: 700;
+
       margin-bottom: 20px;
     }
 
@@ -206,17 +246,27 @@
       gap: 14px;
     }
 
+    /* BUTTONS */
+
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       gap: 8px;
+
       padding: 15px 23px;
       border-radius: 9px;
+
       text-decoration: none;
       font-weight: 900;
+
       border: 1px solid transparent;
       transition: 0.2s;
+
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 16px;
     }
 
     .btn-primary {
@@ -240,12 +290,23 @@
       border-color: var(--green);
     }
 
+    /* HERO CARD */
+
     .hero-card {
-      background: linear-gradient(145deg, rgba(25, 32, 24, 0.95), rgba(11, 14, 11, 0.95));
+      background:
+        linear-gradient(
+          145deg,
+          rgba(25, 32, 24, 0.95),
+          rgba(11, 14, 11, 0.95)
+        );
+
       border: 1px solid #2a3d21;
       border-radius: 24px;
+
       padding: 30px;
-      box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+
+      box-shadow:
+        0 30px 70px rgba(0,0,0,0.35);
     }
 
     .hero-card h3 {
@@ -263,6 +324,7 @@
       display: flex;
       align-items: center;
       gap: 13px;
+
       color: #e8eee4;
       font-weight: 700;
     }
@@ -270,18 +332,24 @@
     .check {
       width: 30px;
       height: 30px;
+
       border-radius: 50%;
+
       display: grid;
       place-items: center;
+
       background: rgba(123,181,27,0.15);
       color: var(--green-light);
+
       flex: 0 0 auto;
     }
 
     .stats {
       margin-top: 28px;
       padding-top: 24px;
+
       border-top: 1px solid #293621;
+
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
@@ -290,12 +358,14 @@
     .stat {
       background: #0b0f0b;
       border: 1px solid #202d1b;
+
       border-radius: 12px;
       padding: 16px;
     }
 
     .stat strong {
       display: block;
+
       font-size: 24px;
       color: var(--green-light);
     }
@@ -305,8 +375,11 @@
       font-size: 14px;
     }
 
+    /* TRUST BAR */
+
     .trust-bar {
       background: #101410;
+
       border-top: 1px solid #1e2a19;
       border-bottom: 1px solid #1e2a19;
     }
@@ -314,12 +387,14 @@
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+
       gap: 18px;
       padding: 26px 0;
     }
 
     .trust-item {
       text-align: center;
+
       font-weight: 800;
       color: #e8eee4;
     }
@@ -328,6 +403,8 @@
       color: var(--green-light);
       margin-right: 5px;
     }
+
+    /* SERVICES */
 
     .services {
       background: #0a0d0a;
@@ -342,22 +419,37 @@
     .service-card {
       position: relative;
       overflow: hidden;
+
       border-radius: 18px;
-      background: linear-gradient(150deg, #151b14, #0b0e0b);
+
+      background:
+        linear-gradient(
+          150deg,
+          #151b14,
+          #0b0e0b
+        );
+
       border: 1px solid #26351f;
+
       padding: 30px;
       transition: 0.25s;
     }
 
     .service-card::after {
       content: "";
+
       position: absolute;
+
       width: 100px;
       height: 100px;
+
       top: -40px;
       right: -40px;
+
       border-radius: 50%;
-      background: rgba(123,181,27,0.08);
+
+      background:
+        rgba(123,181,27,0.08);
     }
 
     .service-card:hover {
@@ -382,10 +474,34 @@
 
     .service-price {
       margin-top: 20px;
+
       font-size: 22px;
       font-weight: 900;
+
       color: var(--green-light);
     }
+
+    .price-info {
+      max-width: 760px;
+      margin: 35px auto 0;
+
+      padding: 18px 20px;
+
+      background: #101510;
+      border: 1px solid #293b21;
+      border-radius: 12px;
+
+      text-align: center;
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+    .price-info strong {
+      color: #fff;
+    }
+
+    /* ABOUT */
 
     .about {
       background: #101410;
@@ -394,6 +510,7 @@
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 60px;
       align-items: center;
     }
@@ -405,6 +522,7 @@
 
     .about-text p {
       color: var(--muted);
+
       margin-bottom: 20px;
       font-size: 18px;
     }
@@ -412,6 +530,7 @@
     .about-points {
       display: grid;
       gap: 15px;
+
       list-style: none;
       margin-top: 24px;
     }
@@ -419,15 +538,22 @@
     .about-points li {
       display: flex;
       align-items: center;
+
       gap: 12px;
       font-weight: 700;
     }
 
     .about-panel {
       border-radius: 20px;
+
       background:
-        radial-gradient(circle at top right, rgba(123,181,27,0.22), transparent 40%),
+        radial-gradient(
+          circle at top right,
+          rgba(123,181,27,0.22),
+          transparent 40%
+        ),
         #0a0e0a;
+
       border: 1px solid #2c3e23;
       padding: 34px;
     }
@@ -442,6 +568,8 @@
       margin-bottom: 22px;
     }
 
+    /* QUOTE */
+
     .quote-section {
       background: #080a08;
     }
@@ -449,28 +577,43 @@
     .quote-box {
       max-width: 900px;
       margin: 0 auto;
-      background: linear-gradient(145deg, #121812, #0c100c);
+
+      background:
+        linear-gradient(
+          145deg,
+          #121812,
+          #0c100c
+        );
+
       border: 1px solid #2e4323;
       border-radius: 24px;
+
       padding: 42px;
-      box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+
+      box-shadow:
+        0 30px 70px rgba(0,0,0,0.25);
     }
 
     .quote-box h2 {
       text-align: center;
-      font-size: clamp(32px, 5vw, 46px);
+
+      font-size:
+        clamp(32px, 5vw, 46px);
+
       margin-bottom: 10px;
     }
 
     .quote-box > p {
       text-align: center;
       color: var(--muted);
+
       margin-bottom: 30px;
     }
 
     .quote-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
+
       gap: 16px;
     }
 
@@ -494,11 +637,16 @@
     select,
     textarea {
       width: 100%;
+
       border: 1px solid #34452a;
+
       background: #080b08;
       color: white;
+
       border-radius: 10px;
+
       padding: 14px 15px;
+
       font: inherit;
       outline: none;
     }
@@ -516,13 +664,20 @@
 
     .form-note {
       color: #8f998b;
+
       font-size: 13px;
       margin-top: 10px;
     }
 
+    /* CONTACT */
+
     .contact {
       background:
-        radial-gradient(circle at center, rgba(82, 125, 15, 0.20), transparent 45%),
+        radial-gradient(
+          circle at center,
+          rgba(82, 125, 15, 0.20),
+          transparent 45%
+        ),
         #0d110d;
     }
 
@@ -535,7 +690,9 @@
     .contact-card {
       border: 1px solid #2a3b22;
       background: #0b0f0b;
+
       border-radius: 16px;
+
       padding: 28px;
       text-align: center;
     }
@@ -551,27 +708,38 @@
 
     .contact-card a {
       text-decoration: none;
+
       color: var(--green-light);
       font-weight: 800;
+
       word-break: break-word;
     }
 
+    /* FOOTER */
+
     footer {
       background: #050705;
+
       border-top: 1px solid #1f2a1a;
+
       padding: 30px 0;
     }
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
+
       gap: 20px;
       flex-wrap: wrap;
+
       color: #8c9589;
       font-size: 14px;
     }
 
+    /* TABLET */
+
     @media (max-width: 900px) {
+
       .hero-grid,
       .about-grid {
         grid-template-columns: 1fr;
@@ -598,7 +766,10 @@
       }
     }
 
+    /* MOBILE */
+
     @media (max-width: 650px) {
+
       .section {
         padding: 65px 0;
       }
@@ -649,393 +820,845 @@
 
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <a class="brand" href="#start">
-        RENOVERA<span>360</span>
-      </a>
+  <!-- HEADER -->
 
-      <ul class="nav-links">
-        <li><a href="#tjanster">Tjänster</a></li>
-        <li><a href="#omoss">Om oss</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-        <li><a class="nav-button" href="#offert">Begär offert</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <header>
 
-<main>
+    <div class="container">
 
-<section class="hero" id="start">
-  <div class="container hero-grid">
+      <nav>
 
-    <div>
-      <div class="hero-badge">
-        ✓ Kostnadsfri offert
-      </div>
-
-      <h1>
-        VI GÖR JOBBET.<br>
-        <span>DU FÅR TID ÖVER.</span>
-      </h1>
-
-      <p>
-        Renovera360 hjälper privatpersoner och företag med allt från
-        trädgård och städning till fönsterputs, biltvätt och flytthjälp.
-        En kontakt – flera tjänster.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="#offert">
-          Begär kostnadsfri offert
+        <a
+          class="brand"
+          href="#start"
+        >
+          RENOVERA<span>360</span>
         </a>
 
-        <a class="btn btn-secondary" href="tel:+46763964804">
-          📞 076 396 48 04
-        </a>
-      </div>
-    </div>
+        <ul class="nav-links">
 
-    <div class="hero-card">
-      <h3>Varför välja Renovera360?</h3>
+          <li>
+            <a href="#tjanster">
+              Tjänster
+            </a>
+          </li>
 
-      <ul class="hero-checks">
-        <li>
-          <span class="check">✓</span>
-          Punktlig och personlig service
-        </li>
+          <li>
+            <a href="#omoss">
+              Om oss
+            </a>
+          </li>
 
-        <li>
-          <span class="check">✓</span>
-          Tydliga priser och kostnadsfri offert
-        </li>
+          <li>
+            <a href="#kontakt">
+              Kontakt
+            </a>
+          </li>
 
-        <li>
-          <span class="check">✓</span>
-          Flera tjänster från samma företag
-        </li>
+          <li>
+            <a
+              class="nav-button"
+              href="#offert"
+            >
+              Begär offert
+            </a>
+          </li>
 
-        <li>
-          <span class="check">✓</span>
-          Fokus på kvalitet och nöjda kunder
-        </li>
-      </ul>
+        </ul>
 
-      <div class="stats">
-        <div class="stat">
-          <strong>6+</strong>
-          <span>Tjänster</span>
-        </div>
-
-        <div class="stat">
-          <strong>360°</strong>
-          <span>Hjälp för vardagen</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="trust-bar">
-  <div class="container trust-grid">
-    <div class="trust-item"><span>✓</span>Punktliga</div>
-    <div class="trust-item"><span>✓</span>Hög kvalitet</div>
-    <div class="trust-item"><span>✓</span>Bra priser</div>
-    <div class="trust-item"><span>✓</span>Kostnadsfri offert</div>
-  </div>
-</section>
-
-
-<section class="section services" id="tjanster">
-  <div class="container">
-
-    <div class="section-label">Våra tjänster</div>
-
-    <h2 class="section-title">
-      Hjälp när du behöver den
-    </h2>
-
-    <p class="section-text">
-      Vi erbjuder praktiska tjänster för hem, trädgård och vardag.
-      Priset anpassas efter jobbets storlek och omfattning.
-    </p>
-
-    <div class="service-grid">
-
-      <article class="service-card">
-        <div class="service-icon">🌿</div>
-        <h3>Gräsklippning</h3>
-        <p>
-          Regelbunden eller enstaka gräsklippning för en välskött och snygg trädgård.
-        </p>
-        <div class="service-price">Från 399 kr</div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">✂️</div>
-        <h3>Häckklippning</h3>
-        <p>
-          Noggrann klippning och formning av häckar för ett välskött resultat.
-        </p>
-        <div class="service-price">Från 899 kr</div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🪟</div>
-        <h3>Fönsterputsning</h3>
-        <p>
-          Professionell putsning för rena och klara fönster, både invändigt och utvändigt.
-        </p>
-        <div class="service-price">Från 699 kr</div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🚗</div>
-        <h3>Biltvätt</h3>
-        <p>
-          Smidig biltvätt för dig som vill ha en ren och fräsch bil utan krångel.
-        </p>
-        <div class="service-price">Från 399 kr</div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">📦</div>
-        <h3>Flytthjälp</h3>
-        <p>
-          Pålitlig hjälp vid mindre och större flyttar med fokus på trygg hantering.
-        </p>
-        <div class="service-price">Från 699 kr/timme</div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🧹</div>
-        <h3>Städning</h3>
-        <p>
-          Noggrann städning för ett fräscht och trivsamt hem eller arbetsplats.
-        </p>
-        <div class="service-price">Från 599 kr</div>
-      </article>
+      </nav>
 
     </div>
 
-  </div>
-</section>
+  </header>
 
 
-<section class="section about" id="omoss">
-  <div class="container about-grid">
+  <main>
 
-    <div class="about-text">
+    <!-- HERO -->
 
-      <div class="section-label">Om Renovera360</div>
+    <section
+      class="hero"
+      id="start"
+    >
 
-      <h2 class="section-title">
-        Enklare vardag. Bättre service.
-      </h2>
+      <div class="container hero-grid">
 
-      <p>
-        Renovera360 skapades för att göra det enklare att få hjälp med
-        vardagens praktiska jobb utan att behöva kontakta flera olika företag.
-      </p>
+        <div>
 
-      <p>
-        Vårt fokus är tydlig kommunikation, pålitlighet och ett resultat som
-        kunden känner sig nöjd med.
-      </p>
-
-      <ul class="about-points">
-        <li><span class="check">✓</span>Snabb återkoppling</li>
-        <li><span class="check">✓</span>Flexibla lösningar</li>
-        <li><span class="check">✓</span>Kostnadsfri offert</li>
-      </ul>
-
-    </div>
-
-    <div class="about-panel">
-      <h3>Behöver du hjälp med något annat?</h3>
-
-      <p>
-        Hittar du inte exakt den tjänst du söker? Kontakta oss ändå.
-        Vi hjälper gärna till att hitta en lösning.
-      </p>
-
-      <a class="btn btn-primary" href="#kontakt">
-        Kontakta oss
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="section quote-section" id="offert">
-  <div class="container">
-
-    <div class="quote-box">
-
-      <h2>Begär en kostnadsfri offert</h2>
-
-      <p>
-        Fyll i uppgifterna nedan så öppnas ett färdigt mejl till oss.
-      </p>
-
-      <form class="quote-form" onsubmit="sendQuote(event)">
-
-        <div class="form-group">
-          <label for="name">Namn</label>
-          <input id="name" type="text" placeholder="Ditt namn" required>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Telefonnummer</label>
-          <input id="phone" type="tel" placeholder="07X XXX XX XX" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">E-post</label>
-          <input id="email" type="email" placeholder="din@email.se" required>
-        </div>
-
-        <div class="form-group">
-          <label for="service">Tjänst</label>
-
-          <select id="service" required>
-            <option value="">Välj tjänst</option>
-            <option>Gräsklippning</option>
-            <option>Häckklippning</option>
-            <option>Fönsterputsning</option>
-            <option>Biltvätt</option>
-            <option>Flytthjälp</option>
-            <option>Städning</option>
-            <option>Annat</option>
-          </select>
-        </div>
-
-        <div class="form-group full">
-          <label for="message">Beskriv jobbet</label>
-
-          <textarea
-            id="message"
-            placeholder="Berätta kort vad du behöver hjälp med..."
-            required></textarea>
-        </div>
-
-        <div class="form-group full">
-          <button class="btn btn-primary" type="submit">
-            Skicka offertförfrågan
-          </button>
-
-          <div class="form-note">
-            När du klickar öppnas din e-postapp med uppgifterna färdigifyllda.
+          <div class="hero-badge">
+            ✓ Kostnadsfri offert
           </div>
+
+          <h1>
+            VI GÖR JOBBET.<br>
+            <span>
+              DU FÅR TID ÖVER.
+            </span>
+          </h1>
+
+          <p>
+            Renovera360 hjälper privatpersoner och företag
+            med allt från trädgård och städning till
+            fönsterputs, biltvätt och flytthjälp.
+            En kontakt – flera tjänster.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              class="btn btn-primary"
+              href="#offert"
+            >
+              Begär kostnadsfri offert
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="tel:+46763964804"
+            >
+              📞 076 396 48 04
+            </a>
+
+          </div>
+
         </div>
 
-      </form>
 
-    </div>
+        <div class="hero-card">
 
-  </div>
-</section>
+          <h3>
+            Varför välja Renovera360?
+          </h3>
 
+          <ul class="hero-checks">
 
-<section class="section contact" id="kontakt">
-  <div class="container">
+            <li>
+              <span class="check">✓</span>
+              Punktlig och personlig service
+            </li>
 
-    <div class="section-label">Kontakt</div>
+            <li>
+              <span class="check">✓</span>
+              Tydliga priser och kostnadsfri offert
+            </li>
 
-    <h2 class="section-title">
-      Kontakta oss idag
-    </h2>
+            <li>
+              <span class="check">✓</span>
+              Flera tjänster från samma företag
+            </li>
 
-    <p class="section-text">
-      Har du frågor eller vill du boka en tjänst?
-      Hör av dig så återkommer vi så snart vi kan.
-    </p>
+            <li>
+              <span class="check">✓</span>
+              Fokus på kvalitet och nöjda kunder
+            </li>
 
-    <div class="contact-grid">
+          </ul>
 
-      <div class="contact-card">
-        <div class="icon">📞</div>
-        <h3>Telefon</h3>
-        <a href="tel:+46763964804">
-          076 396 48 04
-        </a>
+          <div class="stats">
+
+            <div class="stat">
+              <strong>6+</strong>
+              <span>Tjänster</span>
+            </div>
+
+            <div class="stat">
+              <strong>360°</strong>
+              <span>Hjälp för vardagen</span>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="contact-card">
-        <div class="icon">✉️</div>
-        <h3>E-post</h3>
-        <a href="mailto:hazem@renovera360.se">
-          hazem@renovera360.se
-        </a>
+    </section>
+
+
+    <!-- TRUST -->
+
+    <section class="trust-bar">
+
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <span>✓</span>
+          Punktliga
+        </div>
+
+        <div class="trust-item">
+          <span>✓</span>
+          Hög kvalitet
+        </div>
+
+        <div class="trust-item">
+          <span>✓</span>
+          Bra priser
+        </div>
+
+        <div class="trust-item">
+          <span>✓</span>
+          Kostnadsfri offert
+        </div>
+
       </div>
 
-      <div class="contact-card">
-        <div class="icon">📝</div>
-        <h3>Kostnadsfri offert</h3>
-        <a href="#offert">
-          Begär offert
-        </a>
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section
+      class="section services"
+      id="tjanster"
+    >
+
+      <div class="container">
+
+        <div class="section-label">
+          Våra tjänster
+        </div>
+
+        <h2 class="section-title">
+          Hjälp när du behöver den
+        </h2>
+
+        <p class="section-text">
+          Vi erbjuder praktiska tjänster för hem,
+          trädgård och vardag. Priset anpassas efter
+          jobbets storlek och omfattning.
+        </p>
+
+
+        <div class="service-grid">
+
+          <!-- GRÄSKLIPPNING -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              🌿
+            </div>
+
+            <h3>
+              Gräsklippning
+            </h3>
+
+            <p>
+              Regelbunden eller enstaka gräsklippning
+              för en välskött och snygg trädgård.
+            </p>
+
+            <div class="service-price">
+              Från 690 kr
+            </div>
+
+          </article>
+
+
+          <!-- HÄCKKLIPPNING -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              ✂️
+            </div>
+
+            <h3>
+              Häckklippning
+            </h3>
+
+            <p>
+              Noggrann klippning och formning av
+              häckar för ett välskött resultat.
+            </p>
+
+            <div class="service-price">
+              Från 990 kr
+            </div>
+
+          </article>
+
+
+          <!-- FÖNSTERPUTSNING -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              🪟
+            </div>
+
+            <h3>
+              Fönsterputsning
+            </h3>
+
+            <p>
+              Professionell putsning för rena och
+              klara fönster, både invändigt och
+              utvändigt.
+            </p>
+
+            <div class="service-price">
+              Från 790 kr
+            </div>
+
+          </article>
+
+
+          <!-- BILTVÄTT -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              🚗
+            </div>
+
+            <h3>
+              Biltvätt
+            </h3>
+
+            <p>
+              Smidig biltvätt för dig som vill ha
+              en ren och fräsch bil utan krångel.
+            </p>
+
+            <div class="service-price">
+              Från 599 kr
+            </div>
+
+          </article>
+
+
+          <!-- FLYTTHJÄLP -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              📦
+            </div>
+
+            <h3>
+              Flytthjälp
+            </h3>
+
+            <p>
+              Pålitlig hjälp vid mindre och större
+              flyttar med fokus på trygg hantering.
+            </p>
+
+            <div class="service-price">
+              Från 699 kr/timme
+            </div>
+
+          </article>
+
+
+          <!-- STÄDNING -->
+
+          <article class="service-card">
+
+            <div class="service-icon">
+              🧹
+            </div>
+
+            <h3>
+              Städning
+            </h3>
+
+            <p>
+              Noggrann städning för ett fräscht och
+              trivsamt hem eller arbetsplats.
+            </p>
+
+            <div class="service-price">
+              Från 599 kr
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <!-- PRICE INFORMATION -->
+
+        <div class="price-info">
+
+          <strong>
+            Prisinformation:
+          </strong>
+
+          Priserna ovan är frånpriser inklusive moms
+          och före eventuellt RUT-avdrag.
+
+          Slutpriset beror på arbetets omfattning,
+          storlek och eventuella tillägg.
+
+          Kontakta oss för en kostnadsfri offert.
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section
+      class="section about"
+      id="omoss"
+    >
+
+      <div class="container about-grid">
+
+        <div class="about-text">
+
+          <div class="section-label">
+            Om Renovera360
+          </div>
+
+          <h2 class="section-title">
+            Enklare vardag.
+            Bättre service.
+          </h2>
+
+          <p>
+            Renovera360 skapades för att göra det
+            enklare att få hjälp med vardagens
+            praktiska jobb utan att behöva kontakta
+            flera olika företag.
+          </p>
+
+          <p>
+            Vårt fokus är tydlig kommunikation,
+            pålitlighet och ett resultat som kunden
+            känner sig nöjd med.
+          </p>
+
+          <ul class="about-points">
+
+            <li>
+              <span class="check">✓</span>
+              Snabb återkoppling
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Flexibla lösningar
+            </li>
+
+            <li>
+              <span class="check">✓</span>
+              Kostnadsfri offert
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="about-panel">
+
+          <h3>
+            Behöver du hjälp med något annat?
+          </h3>
+
+          <p>
+            Hittar du inte exakt den tjänst du söker?
+            Kontakta oss ändå. Vi hjälper gärna till
+            att hitta en lösning.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="#kontakt"
+          >
+            Kontakta oss
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- QUOTE FORM -->
+
+    <section
+      class="section quote-section"
+      id="offert"
+    >
+
+      <div class="container">
+
+        <div class="quote-box">
+
+          <h2>
+            Begär en kostnadsfri offert
+          </h2>
+
+          <p>
+            Berätta vad du behöver hjälp med så
+            återkommer vi så snart som möjligt.
+          </p>
+
+
+          <form
+            class="quote-form"
+            onsubmit="sendQuote(event)"
+          >
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+              <label for="name">
+                Namn
+              </label>
+
+              <input
+                id="name"
+                type="text"
+                placeholder="Ditt namn"
+                required
+              />
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+              <label for="phone">
+                Telefonnummer
+              </label>
+
+              <input
+                id="phone"
+                type="tel"
+                placeholder="07X XXX XX XX"
+                required
+              />
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+              <label for="email">
+                E-post
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                placeholder="din@email.se"
+                required
+              />
+
+            </div>
+
+
+            <!-- SERVICE -->
+
+            <div class="form-group">
+
+              <label for="service">
+                Tjänst
+              </label>
+
+              <select
+                id="service"
+                required
+              >
+
+                <option value="">
+                  Välj tjänst
+                </option>
+
+                <option>
+                  Gräsklippning
+                </option>
+
+                <option>
+                  Häckklippning
+                </option>
+
+                <option>
+                  Fönsterputsning
+                </option>
+
+                <option>
+                  Biltvätt
+                </option>
+
+                <option>
+                  Flytthjälp
+                </option>
+
+                <option>
+                  Städning
+                </option>
+
+                <option>
+                  Annat
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group full">
+
+              <label for="message">
+                Beskriv jobbet
+              </label>
+
+              <textarea
+                id="message"
+                placeholder="Berätta kort vad du behöver hjälp med..."
+                required
+              ></textarea>
+
+            </div>
+
+
+            <!-- SUBMIT -->
+
+            <div class="form-group full">
+
+              <button
+                class="btn btn-primary"
+                type="submit"
+              >
+                Skicka offertförfrågan
+              </button>
+
+              <div class="form-note">
+                När du klickar öppnas din e-postapp
+                med uppgifterna färdigifyllda.
+              </div>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section
+      class="section contact"
+      id="kontakt"
+    >
+
+      <div class="container">
+
+        <div class="section-label">
+          Kontakt
+        </div>
+
+        <h2 class="section-title">
+          Kontakta oss idag
+        </h2>
+
+        <p class="section-text">
+          Har du frågor eller vill du boka en tjänst?
+          Hör av dig så återkommer vi så snart vi kan.
+        </p>
+
+
+        <div class="contact-grid">
+
+          <!-- PHONE -->
+
+          <div class="contact-card">
+
+            <div class="icon">
+              📞
+            </div>
+
+            <h3>
+              Telefon
+            </h3>
+
+            <a href="tel:+46763964804">
+              076 396 48 04
+            </a>
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="contact-card">
+
+            <div class="icon">
+              ✉️
+            </div>
+
+            <h3>
+              E-post
+            </h3>
+
+            <a href="mailto:hazem@renovera360.se">
+              hazem@renovera360.se
+            </a>
+
+          </div>
+
+
+          <!-- QUOTE -->
+
+          <div class="contact-card">
+
+            <div class="icon">
+              📝
+            </div>
+
+            <h3>
+              Kostnadsfri offert
+            </h3>
+
+            <a href="#offert">
+              Begär offert
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 Renovera360.
+        Alla rättigheter förbehållna.
+      </div>
+
+      <div>
+        Snabbt • Enkelt • Professionellt
       </div>
 
     </div>
 
-  </div>
-</section>
-
-</main>
+  </footer>
 
 
-<footer>
-  <div class="container footer-inner">
-    <div>
-      © 2026 Renovera360. Alla rättigheter förbehållna.
-    </div>
+  <!-- JAVASCRIPT -->
 
-    <div>
-      Snabbt • Enkelt • Professionellt
-    </div>
-  </div>
-</footer>
+  <script>
+
+    function sendQuote(event) {
+
+      event.preventDefault();
 
 
-<script>
-  function sendQuote(event) {
-    event.preventDefault();
+      const name =
+        document
+          .getElementById("name")
+          .value;
 
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
-    const service = document.getElementById("service").value;
-    const message = document.getElementById("message").value;
 
-    const subject = encodeURIComponent(
-      "Offertförfrågan – " + service
-    );
+      const phone =
+        document
+          .getElementById("phone")
+          .value;
 
-    const body = encodeURIComponent(
-      "Hej Renovera360!\n\n" +
-      "Jag vill gärna få en kostnadsfri offert.\n\n" +
-      "Namn: " + name + "\n" +
-      "Telefon: " + phone + "\n" +
-      "E-post: " + email + "\n" +
-      "Tjänst: " + service + "\n\n" +
-      "Beskrivning:\n" + message + "\n\n" +
-      "Med vänliga hälsningar,\n" +
-      name
-    );
 
-    window.location.href =
-      "mailto:hazem@renovera360.se?subject=" +
-      subject +
-      "&body=" +
-      body;
-  }
-</script>
+      const email =
+        document
+          .getElementById("email")
+          .value;
+
+
+      const service =
+        document
+          .getElementById("service")
+          .value;
+
+
+      const message =
+        document
+          .getElementById("message")
+          .value;
+
+
+      const subject =
+        encodeURIComponent(
+          "Offertförfrågan – " + service
+        );
+
+
+      const body =
+        encodeURIComponent(
+
+          "Hej Renovera360!\n\n" +
+
+          "Jag vill gärna få en kostnadsfri offert.\n\n" +
+
+          "Namn: " +
+          name +
+          "\n" +
+
+          "Telefon: " +
+          phone +
+          "\n" +
+
+          "E-post: " +
+          email +
+          "\n" +
+
+          "Tjänst: " +
+          service +
+          "\n\n" +
+
+          "Beskrivning:\n" +
+          message +
+          "\n\n" +
+
+          "Med vänliga hälsningar,\n" +
+          name
+
+        );
+
+
+      window.location.href =
+
+        "mailto:hazem@renovera360.se" +
+
+        "?subject=" +
+        subject +
+
+        "&body=" +
+        body;
+
+    }
+
+  </script>
 
 </body>
 </html>
