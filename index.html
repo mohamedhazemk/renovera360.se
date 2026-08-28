@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Renovera360 | Vi gör jobbet – så du får tid över</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Renovera360 | Städ, trädgård, flytthjälp och mer</title>
+
+  <meta name="description" content="Renovera360 erbjuder städning, gräsklippning, häckklippning, fönsterputsning, biltvätt och flytthjälp. Begär en kostnadsfri offert idag.">
 
   <style>
+    :root {
+      --green: #7bb51b;
+      --green-light: #94d329;
+      --green-dark: #4d760d;
+      --black: #070907;
+      --dark: #0d110d;
+      --dark-2: #141914;
+      --border: #283820;
+      --text: #ffffff;
+      --muted: #b8beb5;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,170 +30,307 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #080b08;
-      color: white;
+      background: var(--black);
+      color: var(--text);
       line-height: 1.6;
     }
 
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
+      width: min(92%, 1180px);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-label {
+      color: var(--green-light);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .section-text {
+      max-width: 720px;
+      text-align: center;
+      color: var(--muted);
+      margin: 0 auto 45px;
+      font-size: 18px;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(5, 8, 5, 0.96);
-      border-bottom: 1px solid #68a900;
+      background: rgba(7, 9, 7, 0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(123, 181, 27, 0.25);
     }
 
     nav {
-      min-height: 75px;
+      min-height: 78px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    .logo {
-      font-size: 30px;
-      font-weight: 800;
-      color: white;
+    .brand {
+      text-decoration: none;
+      font-size: 29px;
+      font-weight: 900;
+      letter-spacing: -1px;
     }
 
-    .logo span {
-      color: #70ad11;
+    .brand span {
+      color: var(--green-light);
     }
 
-    nav ul {
+    .nav-links {
       display: flex;
-      gap: 25px;
+      align-items: center;
+      gap: 28px;
       list-style: none;
     }
 
-    nav a {
-      color: white;
+    .nav-links a {
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
+      color: #f3f3f3;
+      transition: 0.2s;
     }
 
-    nav a:hover {
-      color: #7dbd17;
+    .nav-links a:hover {
+      color: var(--green-light);
+    }
+
+    .nav-button {
+      background: var(--green);
+      padding: 11px 17px;
+      border-radius: 8px;
+    }
+
+    .nav-button:hover {
+      color: white !important;
+      background: var(--green-light);
     }
 
     .hero {
-      min-height: 650px;
+      min-height: 720px;
       display: flex;
       align-items: center;
-      text-align: center;
+      position: relative;
+      overflow: hidden;
       background:
-        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.88)),
-        radial-gradient(circle at top right, #304d0b, #070907 60%);
+        radial-gradient(circle at 80% 20%, rgba(98, 150, 20, 0.25), transparent 33%),
+        radial-gradient(circle at 15% 70%, rgba(63, 98, 14, 0.20), transparent 35%),
+        linear-gradient(145deg, #060806, #111711 62%, #070907);
     }
 
-    .hero-content {
-      max-width: 850px;
-      margin: auto;
-      padding: 70px 0;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
     }
 
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 1.05;
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+      padding: 90px 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid #35521c;
+      background: rgba(123, 181, 27, 0.08);
+      color: #dff6bb;
+      font-size: 14px;
+      font-weight: 700;
       margin-bottom: 20px;
     }
 
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+    }
+
     .hero h1 span {
-      color: #7dbd17;
+      color: var(--green-light);
     }
 
     .hero p {
-      max-width: 720px;
-      margin: 0 auto 30px;
-      font-size: 21px;
-      color: #ddd;
+      max-width: 650px;
+      font-size: 20px;
+      color: var(--muted);
+      margin-bottom: 32px;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 14px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 15px 25px;
-      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 23px;
+      border-radius: 9px;
       text-decoration: none;
-      font-weight: 800;
-      transition: .2s;
+      font-weight: 900;
+      border: 1px solid transparent;
+      transition: 0.2s;
     }
 
     .btn-primary {
-      background: #70ad11;
-      color: white;
+      background: var(--green);
+      color: #fff;
     }
 
     .btn-primary:hover {
-      background: #86ca18;
+      background: var(--green-light);
       transform: translateY(-2px);
     }
 
-    .btn-outline {
-      border: 2px solid #70ad11;
-      color: white;
+    .btn-secondary {
+      border-color: #456421;
+      background: rgba(255,255,255,0.02);
+      color: #fff;
     }
 
-    .btn-outline:hover {
-      background: #70ad11;
+    .btn-secondary:hover {
+      background: #121a0f;
+      border-color: var(--green);
     }
 
-    .benefits {
-      background: #101510;
-      border-top: 1px solid #24331a;
-      border-bottom: 1px solid #24331a;
+    .hero-card {
+      background: linear-gradient(145deg, rgba(25, 32, 24, 0.95), rgba(11, 14, 11, 0.95));
+      border: 1px solid #2a3d21;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.35);
     }
 
-    .benefit-grid {
-      padding: 25px 0;
+    .hero-card h3 {
+      font-size: 26px;
+      margin-bottom: 22px;
+    }
+
+    .hero-checks {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-checks li {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: #e8eee4;
+      font-weight: 700;
+    }
+
+    .check {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(123,181,27,0.15);
+      color: var(--green-light);
+      flex: 0 0 auto;
+    }
+
+    .stats {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid #293621;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .stat {
+      background: #0b0f0b;
+      border: 1px solid #202d1b;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      color: var(--green-light);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .trust-bar {
+      background: #101410;
+      border-top: 1px solid #1e2a19;
+      border-bottom: 1px solid #1e2a19;
+    }
+
+    .trust-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
+      gap: 18px;
+      padding: 26px 0;
+    }
+
+    .trust-item {
       text-align: center;
+      font-weight: 800;
+      color: #e8eee4;
     }
 
-    .benefit {
-      font-weight: 700;
-      color: #eee;
-    }
-
-    .benefit span {
-      color: #79b817;
-      margin-right: 6px;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 15px;
-      font-size: 40px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: #bbb;
-      max-width: 700px;
-      margin: 0 auto 45px;
+    .trust-item span {
+      color: var(--green-light);
+      margin-right: 5px;
     }
 
     .services {
-      background: #0b0f0b;
+      background: #0a0d0a;
     }
 
     .service-grid {
@@ -187,140 +339,309 @@
       gap: 22px;
     }
 
-    .card {
-      background: linear-gradient(145deg, #141914, #0b0e0b);
-      border: 1px solid #26351d;
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      background: linear-gradient(150deg, #151b14, #0b0e0b);
+      border: 1px solid #26351f;
       padding: 30px;
-      border-radius: 16px;
-      transition: .25s;
+      transition: 0.25s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #70ad11;
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: -40px;
+      right: -40px;
+      border-radius: 50%;
+      background: rgba(123,181,27,0.08);
     }
 
-    .icon {
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--green);
+    }
+
+    .service-icon {
       font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-size: 23px;
       margin-bottom: 10px;
     }
 
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
+    .service-card p {
+      color: var(--muted);
+      min-height: 78px;
     }
 
-    .card p {
-      color: #aaa;
-      min-height: 70px;
-    }
-
-    .price {
-      color: #7dbd17;
+    .service-price {
+      margin-top: 20px;
       font-size: 22px;
-      font-weight: 800;
-      margin-top: 18px;
+      font-weight: 900;
+      color: var(--green-light);
     }
 
     .about {
       background: #101410;
     }
 
-    .about-box {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
     }
 
-    .about-box p {
-      color: #c7c7c7;
+    .about-text .section-label,
+    .about-text .section-title {
+      text-align: left;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 20px;
       font-size: 18px;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 15px;
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .about-points li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
+
+    .about-panel {
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at top right, rgba(123,181,27,0.22), transparent 40%),
+        #0a0e0a;
+      border: 1px solid #2c3e23;
+      padding: 34px;
+    }
+
+    .about-panel h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .about-panel p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .quote-section {
+      background: #080a08;
+    }
+
+    .quote-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, #121812, #0c100c);
+      border: 1px solid #2e4323;
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+    }
+
+    .quote-box h2 {
+      text-align: center;
+      font-size: clamp(32px, 5vw, 46px);
+      margin-bottom: 10px;
+    }
+
+    .quote-box > p {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .quote-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 14px;
+      color: #dde5d9;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #34452a;
+      background: #080b08;
+      color: white;
+      border-radius: 10px;
+      padding: 14px 15px;
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--green);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: #8f998b;
+      font-size: 13px;
+      margin-top: 10px;
     }
 
     .contact {
-      text-align: center;
       background:
-        linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.95)),
-        radial-gradient(circle, #263e0b, #090b09 65%);
+        radial-gradient(circle at center, rgba(82, 125, 15, 0.20), transparent 45%),
+        #0d110d;
     }
 
-    .contact-box {
-      max-width: 750px;
-      margin: auto;
-      background: #101510;
-      border: 1px solid #33491f;
-      border-radius: 18px;
-      padding: 40px 25px;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
-    .contact-box h2 {
-      font-size: 38px;
-      color: #7dbd17;
-      margin-bottom: 8px;
+    .contact-card {
+      border: 1px solid #2a3b22;
+      background: #0b0f0b;
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
     }
 
-    .contact-box p {
-      color: #bbb;
-      margin-bottom: 25px;
+    .contact-card .icon {
+      font-size: 34px;
+      margin-bottom: 12px;
     }
 
-    .contact-info {
-      margin: 25px 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
+    .contact-card h3 {
+      margin-bottom: 7px;
     }
 
-    .contact-info a {
-      color: white;
+    .contact-card a {
       text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
+      color: var(--green-light);
+      font-weight: 800;
+      word-break: break-word;
     }
 
     footer {
-      text-align: center;
-      padding: 25px 15px;
-      color: #888;
       background: #050705;
-      border-top: 1px solid #1e2918;
+      border-top: 1px solid #1f2a1a;
+      padding: 30px 0;
     }
 
-    @media (max-width: 850px) {
-      nav ul {
-        display: none;
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #8c9589;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
       }
 
-      .benefit-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .hero {
+        min-height: auto;
       }
 
       .service-grid {
         grid-template-columns: 1fr 1fr;
       }
+
+      .trust-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .hero-grid {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
       .service-grid {
         grid-template-columns: 1fr;
       }
 
-      .benefit-grid {
+      .trust-grid {
         grid-template-columns: 1fr 1fr;
         font-size: 14px;
       }
 
-      .hero {
-        min-height: 580px;
+      .quote-form {
+        grid-template-columns: 1fr;
       }
 
-      .hero p {
-        font-size: 18px;
+      .form-group.full {
+        grid-column: auto;
       }
 
-      section {
-        padding: 60px 0;
+      .quote-box {
+        padding: 28px 20px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -331,12 +652,15 @@
 <header>
   <div class="container">
     <nav>
-      <div class="logo">RENOVERA<span>360</span></div>
+      <a class="brand" href="#start">
+        RENOVERA<span>360</span>
+      </a>
 
-      <ul>
+      <ul class="nav-links">
         <li><a href="#tjanster">Tjänster</a></li>
         <li><a href="#omoss">Om oss</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
+        <li><a class="nav-button" href="#offert">Begär offert</a></li>
       </ul>
     </nav>
   </div>
@@ -344,158 +668,322 @@
 
 <main>
 
-<section class="hero">
-  <div class="container hero-content">
-    <h1>
-      VI GÖR JOBBET<br>
-      <span>SÅ DU FÅR TID ÖVER</span>
-    </h1>
+<section class="hero" id="start">
+  <div class="container hero-grid">
 
-    <p>
-      Pålitlig hjälp med trädgård, städning, fönsterputs,
-      biltvätt och flytthjälp. Snabbt, enkelt och professionellt.
-    </p>
+    <div>
+      <div class="hero-badge">
+        ✓ Kostnadsfri offert
+      </div>
 
-    <div class="buttons">
-      <a class="btn btn-primary" href="#kontakt">
-        BEGÄR KOSTNADSFRI OFFERT
-      </a>
+      <h1>
+        VI GÖR JOBBET.<br>
+        <span>DU FÅR TID ÖVER.</span>
+      </h1>
 
-      <a class="btn btn-outline" href="tel:+46763964804">
-        RING OSS
-      </a>
+      <p>
+        Renovera360 hjälper privatpersoner och företag med allt från
+        trädgård och städning till fönsterputs, biltvätt och flytthjälp.
+        En kontakt – flera tjänster.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#offert">
+          Begär kostnadsfri offert
+        </a>
+
+        <a class="btn btn-secondary" href="tel:+46763964804">
+          📞 076 396 48 04
+        </a>
+      </div>
     </div>
+
+    <div class="hero-card">
+      <h3>Varför välja Renovera360?</h3>
+
+      <ul class="hero-checks">
+        <li>
+          <span class="check">✓</span>
+          Punktlig och personlig service
+        </li>
+
+        <li>
+          <span class="check">✓</span>
+          Tydliga priser och kostnadsfri offert
+        </li>
+
+        <li>
+          <span class="check">✓</span>
+          Flera tjänster från samma företag
+        </li>
+
+        <li>
+          <span class="check">✓</span>
+          Fokus på kvalitet och nöjda kunder
+        </li>
+      </ul>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>6+</strong>
+          <span>Tjänster</span>
+        </div>
+
+        <div class="stat">
+          <strong>360°</strong>
+          <span>Hjälp för vardagen</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 
-<div class="benefits">
-  <div class="container benefit-grid">
-    <div class="benefit"><span>✓</span>Punktliga</div>
-    <div class="benefit"><span>✓</span>Hög kvalitet</div>
-    <div class="benefit"><span>✓</span>Bra priser</div>
-    <div class="benefit"><span>✓</span>Kostnadsfri offert</div>
+<section class="trust-bar">
+  <div class="container trust-grid">
+    <div class="trust-item"><span>✓</span>Punktliga</div>
+    <div class="trust-item"><span>✓</span>Hög kvalitet</div>
+    <div class="trust-item"><span>✓</span>Bra priser</div>
+    <div class="trust-item"><span>✓</span>Kostnadsfri offert</div>
   </div>
-</div>
+</section>
 
 
-<section class="services" id="tjanster">
+<section class="section services" id="tjanster">
   <div class="container">
 
-    <h2 class="section-title">Våra tjänster</h2>
+    <div class="section-label">Våra tjänster</div>
 
-    <p class="section-subtitle">
-      Vi erbjuder praktisk hjälp för både hem och trädgård.
-      Kontakta oss för ett pris anpassat efter just ditt jobb.
+    <h2 class="section-title">
+      Hjälp när du behöver den
+    </h2>
+
+    <p class="section-text">
+      Vi erbjuder praktiska tjänster för hem, trädgård och vardag.
+      Priset anpassas efter jobbets storlek och omfattning.
     </p>
 
     <div class="service-grid">
 
-      <div class="card">
-        <div class="icon">🌿</div>
+      <article class="service-card">
+        <div class="service-icon">🌿</div>
         <h3>Gräsklippning</h3>
         <p>
-          Vi håller gräsmattan välskött och snygg under hela säsongen.
+          Regelbunden eller enstaka gräsklippning för en välskött och snygg trädgård.
         </p>
-        <div class="price">Från 399 kr</div>
-      </div>
+        <div class="service-price">Från 399 kr</div>
+      </article>
 
-      <div class="card">
-        <div class="icon">✂️</div>
+      <article class="service-card">
+        <div class="service-icon">✂️</div>
         <h3>Häckklippning</h3>
         <p>
-          Noggrann klippning och putsning för en välskött trädgård.
+          Noggrann klippning och formning av häckar för ett välskött resultat.
         </p>
-        <div class="price">Från 899 kr</div>
-      </div>
+        <div class="service-price">Från 899 kr</div>
+      </article>
 
-      <div class="card">
-        <div class="icon">🪟</div>
+      <article class="service-card">
+        <div class="service-icon">🪟</div>
         <h3>Fönsterputsning</h3>
         <p>
-          Professionell fönsterputsning för ett skinande rent resultat.
+          Professionell putsning för rena och klara fönster, både invändigt och utvändigt.
         </p>
-        <div class="price">Från 699 kr</div>
-      </div>
+        <div class="service-price">Från 699 kr</div>
+      </article>
 
-      <div class="card">
-        <div class="icon">🚗</div>
+      <article class="service-card">
+        <div class="service-icon">🚗</div>
         <h3>Biltvätt</h3>
         <p>
-          Vi hjälper dig att få bilen ren och fräsch utan krångel.
+          Smidig biltvätt för dig som vill ha en ren och fräsch bil utan krångel.
         </p>
-        <div class="price">Från 399 kr</div>
-      </div>
+        <div class="service-price">Från 399 kr</div>
+      </article>
 
-      <div class="card">
-        <div class="icon">📦</div>
+      <article class="service-card">
+        <div class="service-icon">📦</div>
         <h3>Flytthjälp</h3>
         <p>
-          Smidig och pålitlig hjälp när du behöver flytta.
+          Pålitlig hjälp vid mindre och större flyttar med fokus på trygg hantering.
         </p>
-        <div class="price">Från 699 kr/timme</div>
-      </div>
+        <div class="service-price">Från 699 kr/timme</div>
+      </article>
 
-      <div class="card">
-        <div class="icon">🧹</div>
+      <article class="service-card">
+        <div class="service-icon">🧹</div>
         <h3>Städning</h3>
         <p>
-          Noggrann städning för ett rent, fräscht och trivsamt hem.
+          Noggrann städning för ett fräscht och trivsamt hem eller arbetsplats.
         </p>
-        <div class="price">Från 599 kr</div>
-      </div>
+        <div class="service-price">Från 599 kr</div>
+      </article>
 
     </div>
-  </div>
-</section>
-
-
-<section class="about" id="omoss">
-  <div class="container about-box">
-
-    <h2 class="section-title">Varför Renovera360?</h2>
-
-    <p>
-      Vi vill göra vardagen enklare för våra kunder. Därför erbjuder vi
-      flera tjänster på ett och samma ställe med fokus på bra service,
-      kvalitet och tydlig kommunikation. Du berättar vad du behöver hjälp
-      med – vi tar hand om resten.
-    </p>
 
   </div>
 </section>
 
 
-<section class="contact" id="kontakt">
-  <div class="container">
+<section class="section about" id="omoss">
+  <div class="container about-grid">
 
-    <div class="contact-box">
+    <div class="about-text">
 
-      <h2>Kontakta oss idag!</h2>
+      <div class="section-label">Om Renovera360</div>
+
+      <h2 class="section-title">
+        Enklare vardag. Bättre service.
+      </h2>
 
       <p>
-        Berätta vad du behöver hjälp med så återkommer vi med en
-        kostnadsfri offert.
+        Renovera360 skapades för att göra det enklare att få hjälp med
+        vardagens praktiska jobb utan att behöva kontakta flera olika företag.
       </p>
 
-      <div class="contact-info">
+      <p>
+        Vårt fokus är tydlig kommunikation, pålitlighet och ett resultat som
+        kunden känner sig nöjd med.
+      </p>
 
-        <a href="tel:+46763964804">
-          📞 076 396 48 04
-        </a>
-
-        <a href="mailto:hazem@renoverar360.se">
-          ✉️ hazem@renoverar360.se
-        </a>
-
-      </div>
-
-      <a class="btn btn-primary"
-         href="mailto:hazem@renoverar360.se?subject=Förfrågan om kostnadsfri offert">
-        BEGÄR OFFERT
-      </a>
+      <ul class="about-points">
+        <li><span class="check">✓</span>Snabb återkoppling</li>
+        <li><span class="check">✓</span>Flexibla lösningar</li>
+        <li><span class="check">✓</span>Kostnadsfri offert</li>
+      </ul>
 
     </div>
+
+    <div class="about-panel">
+      <h3>Behöver du hjälp med något annat?</h3>
+
+      <p>
+        Hittar du inte exakt den tjänst du söker? Kontakta oss ändå.
+        Vi hjälper gärna till att hitta en lösning.
+      </p>
+
+      <a class="btn btn-primary" href="#kontakt">
+        Kontakta oss
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section quote-section" id="offert">
+  <div class="container">
+
+    <div class="quote-box">
+
+      <h2>Begär en kostnadsfri offert</h2>
+
+      <p>
+        Fyll i uppgifterna nedan så öppnas ett färdigt mejl till oss.
+      </p>
+
+      <form class="quote-form" onsubmit="sendQuote(event)">
+
+        <div class="form-group">
+          <label for="name">Namn</label>
+          <input id="name" type="text" placeholder="Ditt namn" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Telefonnummer</label>
+          <input id="phone" type="tel" placeholder="07X XXX XX XX" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-post</label>
+          <input id="email" type="email" placeholder="din@email.se" required>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Tjänst</label>
+
+          <select id="service" required>
+            <option value="">Välj tjänst</option>
+            <option>Gräsklippning</option>
+            <option>Häckklippning</option>
+            <option>Fönsterputsning</option>
+            <option>Biltvätt</option>
+            <option>Flytthjälp</option>
+            <option>Städning</option>
+            <option>Annat</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label for="message">Beskriv jobbet</label>
+
+          <textarea
+            id="message"
+            placeholder="Berätta kort vad du behöver hjälp med..."
+            required></textarea>
+        </div>
+
+        <div class="form-group full">
+          <button class="btn btn-primary" type="submit">
+            Skicka offertförfrågan
+          </button>
+
+          <div class="form-note">
+            När du klickar öppnas din e-postapp med uppgifterna färdigifyllda.
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section contact" id="kontakt">
+  <div class="container">
+
+    <div class="section-label">Kontakt</div>
+
+    <h2 class="section-title">
+      Kontakta oss idag
+    </h2>
+
+    <p class="section-text">
+      Har du frågor eller vill du boka en tjänst?
+      Hör av dig så återkommer vi så snart vi kan.
+    </p>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h3>Telefon</h3>
+        <a href="tel:+46763964804">
+          076 396 48 04
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">✉️</div>
+        <h3>E-post</h3>
+        <a href="mailto:hazem@renovera360.se">
+          hazem@renovera360.se
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <div class="icon">📝</div>
+        <h3>Kostnadsfri offert</h3>
+        <a href="#offert">
+          Begär offert
+        </a>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
@@ -503,8 +991,51 @@
 
 
 <footer>
-  © 2026 Renovera360 • Alla rättigheter förbehållna
+  <div class="container footer-inner">
+    <div>
+      © 2026 Renovera360. Alla rättigheter förbehållna.
+    </div>
+
+    <div>
+      Snabbt • Enkelt • Professionellt
+    </div>
+  </div>
 </footer>
+
+
+<script>
+  function sendQuote(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value;
+
+    const subject = encodeURIComponent(
+      "Offertförfrågan – " + service
+    );
+
+    const body = encodeURIComponent(
+      "Hej Renovera360!\n\n" +
+      "Jag vill gärna få en kostnadsfri offert.\n\n" +
+      "Namn: " + name + "\n" +
+      "Telefon: " + phone + "\n" +
+      "E-post: " + email + "\n" +
+      "Tjänst: " + service + "\n\n" +
+      "Beskrivning:\n" + message + "\n\n" +
+      "Med vänliga hälsningar,\n" +
+      name
+    );
+
+    window.location.href =
+      "mailto:hazem@renovera360.se?subject=" +
+      subject +
+      "&body=" +
+      body;
+  }
+</script>
 
 </body>
 </html>
