@@ -1,364 +1,1577 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Renovera360 | Service i Eskilstuna</title>
-  <meta name="description" content="Renovera360 hjälper privatpersoner och företag i Eskilstuna med trädgårdsskötsel, städning, fönsterputsning, flytthjälp, biltvätt och vinterservice.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root{
-      --bg:#f7f5ef;
-      --white:#ffffff;
-      --green:#58745a;
-      --green-dark:#314735;
-      --green-soft:#e4ebe2;
-      --beige:#ece6db;
-      --text:#252b25;
-      --muted:#6a726a;
-      --border:#dedbd3;
-      --shadow:0 12px 32px rgba(0,0,0,.08);
-    }
+<title>Renovera360 | Service i Eskilstuna</title>
 
-    *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
-    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    img{display:block;width:100%}
-    a{color:inherit}
-    .container{width:min(92%,1180px);margin:auto}
-    .section{padding:82px 0}
-    .eyebrow{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);margin-bottom:10px}
-    .section-title{font-size:clamp(34px,5vw,50px);line-height:1.08;margin-bottom:16px}
-    .section-copy{font-size:18px;color:var(--muted);max-width:720px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:9px;padding:14px 20px;font-weight:800;border:1px solid transparent;transition:.2s;cursor:pointer;font:inherit}
-    .btn-primary{background:var(--green-dark);color:#fff}
-    .btn-primary:hover{background:#243627;transform:translateY(-1px)}
-    .btn-outline{background:#fff;border-color:var(--green-dark);color:var(--green-dark)}
-    .btn-outline:hover{background:var(--green-soft)}
+<meta name="description" content="Renovera360 hjälper privatpersoner och företag i Eskilstuna med trädgårdsskötsel, städning, fönsterputsning, flytthjälp, biltvätt och vinterservice.">
 
-    header{position:sticky;top:0;z-index:1000;background:rgba(247,245,239,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-    nav{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:30px}
-    .brand{text-decoration:none;font-size:28px;font-weight:900;letter-spacing:-1px;color:var(--green-dark)}
-    .brand span{color:var(--green)}
-    .nav-links{display:flex;align-items:center;gap:25px;list-style:none}
-    .nav-links a{text-decoration:none;font-weight:700;color:#364036}
-    .nav-links a:hover{color:var(--green)}
-    .nav-cta{background:var(--green-dark);color:#fff!important;padding:10px 15px;border-radius:7px}
+<style>
 
-    .hero{background:#fff;border-bottom:1px solid var(--border)}
-    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;padding:72px 0}
-    .hero h1{font-size:clamp(46px,6vw,72px);line-height:1;letter-spacing:-2.5px;margin-bottom:22px}
-    .hero h1 span{color:var(--green)}
-    .hero p{font-size:20px;color:var(--muted);margin-bottom:28px;max-width:640px}
-    .hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
-    .hero-photo{position:relative;min-height:530px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-    .hero-photo img{height:530px;object-fit:cover}
-    .hero-badge{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.94);padding:12px 15px;border-radius:10px;font-weight:800;color:var(--green-dark);box-shadow:0 6px 20px rgba(0,0,0,.12)}
+:root {
+  --green: #49674a;
+  --dark: #243427;
+  --softgreen: #edf1e9;
+  --cream: #f7f5ef;
+  --beige: #eee9df;
+  --white: #ffffff;
+  --text: #202620;
+  --muted: #687068;
+  --border: #deddd7;
+  --shadow: 0 12px 35px rgba(0,0,0,.08);
+}
 
-    .promises{background:#f0ede6;border-bottom:1px solid var(--border)}
-    .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:30px 0}
-    .promise-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px 20px;text-align:center;box-shadow:0 5px 16px rgba(0,0,0,.04);position:relative}
-    .promise-card:before{content:"";position:absolute;inset:7px;border:1px solid #cfc9bd;border-radius:10px;pointer-events:none}
-    .promise-card span{display:block;font-family:Georgia,'Times New Roman',serif;font-size:24px;line-height:1.25;color:var(--green-dark);padding:10px}
-    .promise-card small{display:block;margin-top:8px;color:var(--muted);font-size:13px;letter-spacing:.4px}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    .services-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:38px}
-    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .service-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:0 7px 20px rgba(0,0,0,.04);transition:.2s}
-    .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-    .service-icon{font-size:34px;margin-bottom:14px}
-    .service-card h3{font-size:22px;margin-bottom:8px}
-    .service-card p{color:var(--muted)}
-    .service-link{display:inline-block;margin-top:15px;text-decoration:none;color:var(--green-dark);font-weight:900}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    .work{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .work-gallery{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-    .work-gallery img{height:300px;object-fit:cover;border-radius:12px;border:1px solid var(--border);transition:.25s}
-    .work-gallery img:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+img {
+  width: 100%;
+  display: block;
+}
 
-    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}
-    .about-photo{border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
-    .about-photo img{height:560px;object-fit:cover;object-position:center 35%}
-    .role{display:inline-block;margin-top:8px;margin-bottom:22px;padding:7px 12px;border-radius:999px;background:var(--green-soft);color:var(--green-dark);font-weight:800}
-    .about-note{margin-top:18px;color:var(--muted)}
+a {
+  color: inherit;
+}
 
-    .winter{background:var(--green-dark);color:#fff}
-    .winter .eyebrow{color:#ceddca}
-    .winter-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
-    .winter p{color:#d7ded6}
-    .winter-list{list-style:none;display:grid;gap:12px}
-    .winter-list li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);padding:14px 16px;border-radius:9px;font-weight:700}
-    .winter .btn-primary{margin-top:24px;background:#fff;color:var(--green-dark)}
+.container {
+  width: min(92%, 1180px);
+  margin: auto;
+}
 
-    .reviews{background:#f3f0e9}
-    .review-wrap{max-width:650px;margin-top:30px}
-    .review-card{background:#fff;padding:28px;border-radius:14px;border:1px solid var(--border);box-shadow:0 7px 20px rgba(0,0,0,.05)}
-    .stars{color:#987922;letter-spacing:2px;margin-bottom:12px}
-    .review-card p{font-family:Georgia,'Times New Roman',serif;font-size:24px;color:#444c44}
-    .review-name{margin-top:16px;font-weight:900;color:var(--green-dark)}
+.section {
+  padding: 85px 0;
+}
 
-    .quote{background:#fff}
-    .quote-box{max-width:900px;margin:auto;border:1px solid var(--border);border-radius:16px;padding:38px;background:var(--bg)}
-    .quote-box h2{text-align:center;font-size:clamp(32px,5vw,46px);margin-bottom:8px}
-    .quote-box>p{text-align:center;color:var(--muted);margin-bottom:28px}
-    .quote-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-    .form-group{display:flex;flex-direction:column;gap:7px}
-    .form-group.full{grid-column:1/-1}
-    label{font-size:14px;font-weight:800}
-    input,select,textarea{width:100%;padding:13px 14px;border:1px solid #cfcfc7;border-radius:8px;background:#fff;font:inherit;color:var(--text);outline:none}
-    input:focus,select:focus,textarea:focus{border-color:var(--green)}
-    textarea{min-height:135px;resize:vertical}
+.eyebrow {
+  color: var(--green);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
 
-    .contact{border-top:1px solid var(--border)}
-    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-    .contact-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
-    .contact-card h3{margin-bottom:6px}
-    .contact-card a{text-decoration:none;color:var(--green-dark);font-weight:900;word-break:break-word}
+.title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(35px,5vw,52px);
+  line-height: 1.05;
+  font-weight: 500;
+}
 
-    footer{background:#26362a;color:#e7ece6;padding:28px 0}
-    .footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;font-size:14px}
+.text {
+  color: var(--muted);
+  font-size: 17px;
+}
 
-    @media(max-width:900px){
-      .hero-grid,.about-grid,.winter-grid{grid-template-columns:1fr}
-      .service-grid{grid-template-columns:1fr 1fr}
-      .promise-grid{grid-template-columns:1fr}
-      .work-gallery{grid-template-columns:1fr 1fr}
-      .nav-links{display:none}
-      .services-head{display:block}
-      .contact-grid{grid-template-columns:1fr}
-    }
-    @media(max-width:650px){
-      .section{padding:62px 0}
-      .hero-grid{padding:55px 0}
-      .hero-photo,.hero-photo img{min-height:380px;height:380px}
-      .hero-buttons{flex-direction:column}
-      .btn{width:100%}
-      .service-grid,.work-gallery,.quote-form{grid-template-columns:1fr}
-      .form-group.full{grid-column:auto}
-      .work-gallery img{height:300px}
-      .quote-box{padding:26px 18px}
-      .about-photo img{height:480px}
-    }
-  </style>
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #eee;
+  backdrop-filter: blur(10px);
+}
+
+nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--green);
+}
+
+.navlinks {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 27px;
+}
+
+.navlinks a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.navlinks a:hover {
+  color: var(--green);
+}
+
+.contact-top {
+  background: var(--green);
+  color: white !important;
+  padding: 11px 17px;
+  border-radius: 7px;
+}
+
+/* HERO */
+
+.hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.98) 0%,
+      rgba(255,255,255,.92) 38%,
+      rgba(255,255,255,.30) 65%,
+      rgba(255,255,255,.05) 100%
+    ),
+    url("images/hero.jpg") center / cover no-repeat;
+
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 620px;
+}
+
+.hero-small {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  font-size: clamp(50px,7vw,80px);
+  line-height: .98;
+  letter-spacing: -2px;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: var(--green);
+}
+
+.hero p {
+  max-width: 540px;
+  font-size: 18px;
+  color: #454d45;
+  margin-bottom: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: 800;
+  transition: .2s;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.button:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
+}
+
+/* THREE QUOTES */
+
+.promises {
+  margin-top: -42px;
+  position: relative;
+  z-index: 20;
+}
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.promise {
+  background: rgba(255,255,255,.97);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  min-height: 145px;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.promise::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid #ebe7de;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.promise-icon {
+  width: 65px;
+  height: 65px;
+  min-width: 65px;
+  border-radius: 50%;
+  background: var(--softgreen);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 29px;
+  margin-right: 20px;
+}
+
+.promise strong {
+  font-family: Georgia, "Times New Roman", serif;
+  display: block;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.promise em {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--green);
+  font-size: 18px;
+}
+
+/* ABOUT */
+
+.about {
+  padding-top: 110px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.about-image img {
+  height: 530px;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.about-content {
+  max-width: 600px;
+}
+
+.about-content .title {
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  margin-bottom: 18px;
+}
+
+.name {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--green);
+  font-size: 29px;
+  font-style: italic;
+  margin-top: 25px;
+}
+
+.position {
+  font-weight: 800;
+  margin-top: 3px;
+}
+
+/* SERVICES */
+
+.services {
+  background: var(--cream);
+}
+
+.service-header {
+  text-align: center;
+  max-width: 700px;
+  margin: auto auto 42px;
+}
+
+.service-header .title {
+  margin-bottom: 14px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 17px;
+}
+
+.service {
+  background: white;
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: .2s;
+}
+
+.service:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.service-icon {
+  width: 46px;
+  height: 46px;
+  background: var(--softgreen);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 17px;
+  font-size: 21px;
+}
+
+.service h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.service p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* WINTER */
+
+.winter {
+  padding: 45px 0;
+  background: #e8eff3;
+}
+
+.winter-box {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(232,239,243,.98),
+      rgba(232,239,243,.85)
+    );
+
+  border: 1px solid #d5e0e6;
+  border-radius: 15px;
+  padding: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.winter-icon {
+  font-size: 45px;
+}
+
+.winter h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.winter p {
+  color: #5f696e;
+}
+
+.winter-text {
+  flex: 1;
+}
+
+/* WORK */
+
+.work {
+  background: white;
+}
+
+.work-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.work-heading .title {
+  margin-bottom: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.gallery-item {
+  border-radius: 13px;
+  overflow: hidden;
+  height: 285px;
+  background: #eee;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .35s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* REVIEW */
+
+.reviews {
+  background: var(--cream);
+}
+
+.review-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.review {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.04);
+  text-align: center;
+}
+
+.stars {
+  color: var(--green);
+  font-size: 21px;
+  letter-spacing: 4px;
+  margin-bottom: 17px;
+}
+
+.review blockquote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  line-height: 1.45;
+}
+
+.review-name {
+  font-weight: 900;
+  margin-top: 18px;
+  color: var(--green);
+}
+
+/* QUOTE FORM */
+
+.quote {
+  background: white;
+}
+
+.quote-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 45px;
+  border-radius: 16px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+}
+
+.quote-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quote-title h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.quote-title p {
+  color: var(--muted);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #cbc9c2;
+  background: white;
+  padding: 14px;
+  border-radius: 8px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--green);
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+/* CONTACT */
+
+.contact {
+  background: var(--green);
+  color: white;
+  padding: 45px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-symbol {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.contact-item small {
+  display: block;
+  opacity: .8;
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--dark);
+  color: #dfe5df;
+  padding: 24px 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+
+  .navlinks {
+    display: none;
+  }
+
+  .promise-grid,
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media(max-width:650px) {
+
+  .hero {
+    min-height: 670px;
+    align-items: flex-end;
+    padding-bottom: 100px;
+
+    background:
+      linear-gradient(
+        0deg,
+        rgba(255,255,255,.98) 0%,
+        rgba(255,255,255,.88) 50%,
+        rgba(255,255,255,.15) 100%
+      ),
+      url("images/hero.jpg") center / cover no-repeat;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .promises {
+    margin-top: -55px;
+  }
+
+  .promise-grid,
+  .service-grid,
+  .gallery,
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .gallery-item {
+    height: 300px;
+  }
+
+  .about-image img {
+    height: 480px;
+  }
+
+  .winter-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quote-box {
+    padding: 27px 18px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
+
+<!-- NAVIGATION -->
+
 <header>
-  <div class="container">
-    <nav>
-      <a href="#start" class="brand">RENOVERA<span>360</span></a>
-      <ul class="nav-links">
-        <li><a href="#tjanster">Tjänster</a></li>
-        <li><a href="#arbete">Vårt arbete</a></li>
-        <li><a href="#omoss">Om oss</a></li>
-        <li><a href="#vinter">Vinter</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-        <li><a href="#offert" class="nav-cta">Begär offert</a></li>
-      </ul>
-    </nav>
-  </div>
+
+<div class="container">
+
+<nav>
+
+<a href="#hem" class="logo">
+RENOVERA<span>360</span>
+</a>
+
+<ul class="navlinks">
+
+<li>
+<a href="#hem">Hem</a>
+</li>
+
+<li>
+<a href="#omoss">Om oss</a>
+</li>
+
+<li>
+<a href="#tjanster">Tjänster</a>
+</li>
+
+<li>
+<a href="#arbete">Vårt arbete</a>
+</li>
+
+<li>
+<a href="#vinter">Vinterservice</a>
+</li>
+
+<li>
+<a href="#kontakt">Kontakt</a>
+</li>
+
+<li>
+<a href="#offert" class="contact-top">
+Kontakta oss
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+
 </header>
 
-<main>
-  <section class="hero" id="start">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Lokalt serviceföretag i Eskilstuna</div>
-        <h1>Vi hjälper dig med <span>det praktiska.</span></h1>
-        <p>Renovera360 hjälper privatpersoner och företag med trädgård, städning, fönsterputs, flytthjälp, biltvätt och säsongsservice.</p>
-        <div class="hero-buttons">
-          <a href="#offert" class="btn btn-primary">Begär kostnadsfri offert</a>
-          <a href="tel:+46763964804" class="btn btn-outline">Ring 076 396 48 04</a>
-        </div>
-      </div>
-      <div class="hero-photo">
-        <img src="images/hero.jpg" alt="Gräsklippning utförd av Renovera360">
-        <div class="hero-badge">Riktigt arbete • Eskilstuna</div>
-      </div>
-    </div>
-  </section>
 
-  <section class="promises">
-    <div class="container promise-grid">
-      <div class="promise-card">
-        <span>“Din vardag. Lite enklare.”</span>
-        <small>RENOVERA360</small>
-      </div>
-      <div class="promise-card">
-        <span>“När jobbet behöver bli gjort.”</span>
-        <small>RENOVERA360</small>
-      </div>
-      <div class="promise-card">
-        <span>“Pålitlig hjälp, när du behöver den.”</span>
-        <small>RENOVERA360</small>
-      </div>
-    </div>
-  </section>
+<!-- HERO -->
 
-  <section class="section" id="tjanster">
-    <div class="container">
-      <div class="services-head">
-        <div>
-          <div class="eyebrow">Tjänster</div>
-          <h2 class="section-title">Så kan vi hjälpa dig</h2>
-        </div>
-        <p class="section-copy">Varje jobb ser olika ut. Därför lämnar vi offert efter vad du faktiskt behöver hjälp med.</p>
-      </div>
+<section class="hero" id="hem">
 
-      <div class="service-grid">
-        <article class="service-card"><div class="service-icon">🌿</div><h3>Trädgårdsskötsel</h3><p>Gräsklippning, kanttrimning, ogräsrensning och löpande trädgårdsskötsel.</p><a href="#offert" class="service-link">Begär offert →</a></article>
-        <article class="service-card"><div class="service-icon">✂️</div><h3>Häckklippning</h3><p>Klippning och formning av häckar och buskar för ett välskött resultat.</p><a href="#offert" class="service-link">Begär offert →</a></article>
-        <article class="service-card"><div class="service-icon">🪟</div><h3>Fönsterputsning</h3><p>Rena och klara fönster för hem och mindre verksamheter.</p><a href="#offert" class="service-link">Begär offert →</a></article>
-        <article class="service-card"><div class="service-icon">🧹</div><h3>Städning</h3><p>Praktisk städhjälp som anpassas efter bostaden eller verksamhetens behov.</p><a href="#offert" class="service-link">Begär offert →</a></article>
-        <article class="service-card"><div class="service-icon">📦</div><h3>Flytthjälp</h3><p>Hjälp med bärning och praktiska moment vid mindre och större flyttar.</p><a href="#offert" class="service-link">Begär offert →</a></article>
-        <article class="service-card"><div class="service-icon">🚗</div><h3>Biltvätt</h3><p>Smidig hjälp för dig som vill hålla bilen ren och fräsch.</p><a href="#offert" class="service-link">Begär offert →</a></article>
-      </div>
-    </div>
-  </section>
+<div class="container">
 
-  <section class="section work" id="arbete">
-    <div class="container">
-      <div class="eyebrow">Utförda jobb</div>
-      <h2 class="section-title">Vårt arbete</h2>
-      <p class="section-copy">Några bilder från jobb vi har utfört. Vi hjälper till med allt från gräsklippning till löpande trädgårdsskötsel.</p>
+<div class="hero-content">
 
-      <div class="work-gallery">
-        <img src="images/arbete1.jpg" alt="Trädgårdsarbete utfört av Renovera360">
-        <img src="images/arbete2.jpg" alt="Gräsklippning utförd av Renovera360">
-        <img src="images/arbete3.jpg" alt="Trädgård efter gräsklippning">
-        <img src="images/arbete4.jpg" alt="Trädgårdsskötsel i Eskilstuna">
-        <img src="images/arbete5.jpg" alt="Gräsmatta skött av Renovera360">
-        <img src="images/arbete6.jpg" alt="Utfört trädgårdsarbete">
-      </div>
-    </div>
-  </section>
+<div class="hero-small">
+RENOVERA360
+</div>
 
-  <section class="section" id="omoss">
-    <div class="container about-grid">
-      <div class="about-photo">
-        <img src="images/vd.jpg" alt="VD för Renovera360">
-      </div>
-      <div>
-        <div class="eyebrow">Om oss</div>
-        <h2 class="section-title">VD</h2>
-        <span class="role">Renovera360</span>
-        <p class="section-copy">Renovera360 är ett lokalt serviceföretag i Eskilstuna. Vårt mål är enkelt – att erbjuda pålitlig och smidig hjälp för både privatpersoner och företag.</p>
-        <p class="about-note">Personlig kontakt, tydliga offerter och ett resultat vi kan stå bakom.</p>
-      </div>
-    </div>
-  </section>
+<h1>
+Vi hjälper dig<br>
+med det <span>praktiska.</span>
+</h1>
 
-  <section class="section winter" id="vinter">
-    <div class="container winter-grid">
-      <div>
-        <div class="eyebrow">Vinterservice</div>
-        <h2 class="section-title">Hjälp även när snön kommer</h2>
-        <p class="section-copy">Under vintern erbjuder vi hjälp med snöskottning och halkbekämpning vid uppfarter, gångvägar och entréer.</p>
-        <a href="#offert" class="btn btn-primary">Begär offert för vinterservice</a>
-      </div>
-      <ul class="winter-list">
-        <li>❄️ Snöskottning av uppfarter</li>
-        <li>🚪 Snöröjning vid entréer</li>
-        <li>🚶 Skottning av gångvägar</li>
-        <li>🧊 Halkbekämpning</li>
-        <li>📅 Återkommande vinterservice</li>
-      </ul>
-    </div>
-  </section>
+<p>
+Privatpersoner och företag i Eskilstuna med
+trädgårdsskötsel, städning, fönsterputsning,
+flytthjälp, biltvätt och vinterservice.
+</p>
 
-  <section class="section reviews">
-    <div class="container">
-      <div class="eyebrow">Kundrecension</div>
-      <h2 class="section-title">Vad våra kunder säger</h2>
-      <div class="review-wrap">
-        <div class="review-card">
-          <div class="stars">★★★★★</div>
-          <p>“Billiga och bra.”</p>
-          <div class="review-name">Håkan Bolander</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<a href="#offert" class="button">
+Kontakta oss &nbsp; →
+</a>
 
-  <section class="section quote" id="offert">
-    <div class="container">
-      <div class="quote-box">
-        <h2>Begär kostnadsfri offert</h2>
-        <p>Berätta kort vad du behöver hjälp med så återkommer vi.</p>
+</div>
 
-        <form class="quote-form" onsubmit="sendQuote(event)">
-          <div class="form-group"><label for="name">Namn</label><input id="name" type="text" placeholder="Ditt namn" required></div>
-          <div class="form-group"><label for="phone">Telefonnummer</label><input id="phone" type="tel" placeholder="07X XXX XX XX" required></div>
-          <div class="form-group"><label for="email">E-post</label><input id="email" type="email" placeholder="din@email.se" required></div>
-          <div class="form-group">
-            <label for="service">Tjänst</label>
-            <select id="service" required>
-              <option value="">Välj tjänst</option>
-              <option>Gräsklippning</option>
-              <option>Häckklippning</option>
-              <option>Trädgårdsskötsel</option>
-              <option>Fönsterputsning</option>
-              <option>Städning</option>
-              <option>Flytthjälp</option>
-              <option>Biltvätt</option>
-              <option>Höststädning</option>
-              <option>Snöskottning</option>
-              <option>Halkbekämpning</option>
-              <option>Vinterservice</option>
-              <option>Annat</option>
-            </select>
-          </div>
-          <div class="form-group full"><label for="message">Beskriv jobbet</label><textarea id="message" placeholder="Vad behöver du hjälp med? Skriv gärna område och när du önskar hjälpen." required></textarea></div>
-          <div class="form-group full"><button type="submit" class="btn btn-primary">Skicka offertförfrågan</button></div>
-        </form>
-      </div>
-    </div>
-  </section>
+</div>
 
-  <section class="section contact" id="kontakt">
-    <div class="container">
-      <div class="eyebrow">Kontakt</div>
-      <h2 class="section-title">Hör av dig</h2>
-      <div class="contact-grid">
-        <div class="contact-card"><h3>Telefon</h3><a href="tel:+46763964804">076 396 48 04</a></div>
-        <div class="contact-card"><h3>E-post</h3><a href="mailto:hazem@renovera360.se">hazem@renovera360.se</a></div>
-        <div class="contact-card"><h3>Webbplats</h3><a href="https://renovera360.se">renovera360.se</a></div>
-      </div>
-    </div>
-  </section>
-</main>
+</section>
+
+
+<!-- TRE CITAT -->
+
+<section class="promises">
+
+<div class="container">
+
+<div class="promise-grid">
+
+<div class="promise">
+
+<div class="promise-icon">
+⌂
+</div>
+
+<div>
+<strong>Din vardag.</strong>
+<em>Lite enklare.</em>
+</div>
+
+</div>
+
+
+<div class="promise">
+
+<div class="promise-icon">
+⚒
+</div>
+
+<div>
+<strong>När jobbet</strong>
+<em>behöver bli gjort.</em>
+</div>
+
+</div>
+
+
+<div class="promise">
+
+<div class="promise-icon">
+✓
+</div>
+
+<div>
+<strong>Pålitlig hjälp,</strong>
+<em>när du behöver den.</em>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- OM OSS -->
+
+<section class="section about" id="omoss">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-image">
+
+<img
+src="images/vd.jpg"
+alt="Hazem Kharboutly, VD Renovera360"
+>
+
+</div>
+
+
+<div class="about-content">
+
+<div class="eyebrow">
+Om oss
+</div>
+
+<h2 class="title">
+Personlig service<br>
+du kan lita på
+</h2>
+
+<p class="text">
+Renovera360 är ett lokalt serviceföretag i Eskilstuna.
+Vårt mål är att göra det enklare för privatpersoner
+och företag att få hjälp med det praktiska.
+</p>
+
+<p class="text">
+Med fokus på kvalitet, noggrannhet och pålitlighet
+vill vi skapa långsiktiga kundrelationer och leverera
+ett resultat vi kan stå bakom.
+</p>
+
+<div class="name">
+Hazem Kharboutly
+</div>
+
+<div class="position">
+VD, Renovera360
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TJÄNSTER -->
+
+<section class="section services" id="tjanster">
+
+<div class="container">
+
+<div class="service-header">
+
+<div class="eyebrow">
+Våra tjänster
+</div>
+
+<h2 class="title">
+Hjälp när du behöver den
+</h2>
+
+<p class="text">
+Vi erbjuder flexibla lösningar för både
+privatpersoner och företag.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<div class="service">
+
+<div class="service-icon">
+🌿
+</div>
+
+<h3>
+Trädgårdsskötsel
+</h3>
+
+<p>
+Gräsklippning, kanttrimning,
+ogräsrensning och löpande skötsel.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+✂
+</div>
+
+<h3>
+Häckklippning
+</h3>
+
+<p>
+Klippning och formning av häckar
+och buskar.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+◇
+</div>
+
+<h3>
+Fönsterputsning
+</h3>
+
+<p>
+Rena och klara fönster för hem
+och verksamheter.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+✓
+</div>
+
+<h3>
+Städning
+</h3>
+
+<p>
+Städhjälp anpassad efter bostaden
+eller verksamhetens behov.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+▣
+</div>
+
+<h3>
+Flytthjälp
+</h3>
+
+<p>
+Hjälp med bärning och praktiska
+moment vid flytten.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🚗
+</div>
+
+<h3>
+Biltvätt
+</h3>
+
+<p>
+Smidig hjälp för att hålla bilen
+ren och fräsch.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VINTER -->
+
+<section class="winter" id="vinter">
+
+<div class="container">
+
+<div class="winter-box">
+
+<div class="winter-icon">
+❄
+</div>
+
+<div class="winter-text">
+
+<h2>
+Redo för vintern?
+</h2>
+
+<p>
+Vi hjälper dig att hålla uppfarter,
+gångvägar och entréer säkra under vintern
+med snöskottning och halkbekämpning.
+</p>
+
+</div>
+
+<a href="#offert" class="button">
+Vinterservice →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VÅRT ARBETE -->
+
+<section class="section work" id="arbete">
+
+<div class="container">
+
+<div class="work-heading">
+
+<div class="eyebrow">
+Vårt arbete
+</div>
+
+<h2 class="title">
+Några av våra uppdrag
+</h2>
+
+<p class="text">
+Riktiga bilder från arbeten vi har utfört.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="gallery-item">
+<img
+src="images/hero.jpg"
+alt="Gräsklippning Renovera360"
+>
+</div>
+
+
+<div class="gallery-item">
+<img
+src="images/arbete1.jpg"
+alt="Trädgårdsarbete Renovera360"
+>
+</div>
+
+
+<div class="gallery-item">
+<img
+src="images/arbete2.jpg"
+alt="Gräsklippning i Eskilstuna"
+>
+</div>
+
+
+<div class="gallery-item">
+<img
+src="images/arbete3.jpg"
+alt="Trädgårdsskötsel"
+>
+</div>
+
+
+<div class="gallery-item">
+<img
+src="images/arbete4.jpg"
+alt="Utfört trädgårdsarbete"
+>
+</div>
+
+
+<div class="gallery-item">
+<img
+src="images/arbete5.jpg"
+alt="Gräsmatta efter arbete"
+>
+</div>
+
+
+<div class="gallery-item">
+<img
+src="images/arbete6.jpg"
+alt="Renovera360 trädgårdsarbete"
+>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RECENSION -->
+
+<section class="section reviews">
+
+<div class="container">
+
+<div class="review-heading">
+
+<div class="eyebrow">
+Vad våra kunder säger
+</div>
+
+<h2 class="title">
+Kundrecension
+</h2>
+
+</div>
+
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<blockquote>
+“Mycket bra service till ett rimligt pris.
+Nöjd med både bemötandet och resultatet.”
+</blockquote>
+
+<div class="review-name">
+– Håkan Bolander
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- OFFERT -->
+
+<section class="section quote" id="offert">
+
+<div class="container">
+
+<div class="quote-box">
+
+<div class="quote-title">
+
+<div class="eyebrow">
+Kontakta oss
+</div>
+
+<h2>
+Begär kostnadsfri offert
+</h2>
+
+<p>
+Berätta vad du behöver hjälp med så återkommer vi.
+</p>
+
+</div>
+
+
+<form
+class="form"
+onsubmit="sendQuote(event)"
+>
+
+
+<div class="group">
+
+<label for="name">
+Namn
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="Ditt namn"
+required
+>
+
+</div>
+
+
+<div class="group">
+
+<label for="phone">
+Telefonnummer
+</label>
+
+<input
+id="phone"
+type="tel"
+placeholder="07X XXX XX XX"
+required
+>
+
+</div>
+
+
+<div class="group">
+
+<label for="email">
+E-post
+</label>
+
+<input
+id="email"
+type="email"
+placeholder="din@email.se"
+required
+>
+
+</div>
+
+
+<div class="group">
+
+<label for="service">
+Vad behöver du hjälp med?
+</label>
+
+<select
+id="service"
+required
+>
+
+<option value="">
+Välj tjänst
+</option>
+
+<option>
+Gräsklippning
+</option>
+
+<option>
+Häckklippning
+</option>
+
+<option>
+Trädgårdsskötsel
+</option>
+
+<option>
+Fönsterputsning
+</option>
+
+<option>
+Städning
+</option>
+
+<option>
+Flytthjälp
+</option>
+
+<option>
+Biltvätt
+</option>
+
+<option>
+Höststädning
+</option>
+
+<option>
+Snöskottning
+</option>
+
+<option>
+Halkbekämpning
+</option>
+
+<option>
+Vinterservice
+</option>
+
+<option>
+Annat
+</option>
+
+</select>
+
+</div>
+
+
+<div class="group full">
+
+<label for="message">
+Beskriv jobbet
+</label>
+
+<textarea
+id="message"
+placeholder="Berätta kort vad du behöver hjälp med och vilket område jobbet gäller."
+required
+></textarea>
+
+</div>
+
+
+<div class="group full">
+
+<button
+type="submit"
+class="button"
+>
+
+Skicka offertförfrågan →
+
+</button>
+
+</div>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- KONTAKT -->
+
+<section class="contact" id="kontakt">
+
+<div class="container">
+
+<div class="contact-grid">
+
+
+<div class="contact-item">
+
+<div class="contact-symbol">
+☎
+</div>
+
+<div>
+
+<small>
+Telefon
+</small>
+
+<a href="tel:+46763964804">
+076 396 48 04
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-symbol">
+✉
+</div>
+
+<div>
+
+<small>
+E-post
+</small>
+
+<a href="mailto:hazem@renovera360.se">
+hazem@renovera360.se
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contact-item">
+
+<div class="contact-symbol">
+⌖
+</div>
+
+<div>
+
+<small>
+Vi finns i
+</small>
+
+<strong>
+Eskilstuna med omnejd
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
-  <div class="container footer-inner">
-    <div>© 2026 Renovera360</div>
-    <div>Vi gör jobbet – så du får tid över.</div>
-  </div>
+
+<div class="container footer">
+
+<div>
+© 2026 Renovera360
+</div>
+
+<div>
+Vi gör jobbet – så du får tid över.
+</div>
+
+</div>
+
 </footer>
 
+
 <script>
-function sendQuote(event){
-  event.preventDefault();
-  const name=document.getElementById("name").value;
-  const phone=document.getElementById("phone").value;
-  const email=document.getElementById("email").value;
-  const service=document.getElementById("service").value;
-  const message=document.getElementById("message").value;
 
-  const subject=encodeURIComponent("Offertförfrågan – "+service);
-  const body=encodeURIComponent(
-    "Hej Renovera360!\n\n"+
-    "Jag vill gärna få en kostnadsfri offert.\n\n"+
-    "Namn: "+name+"\n"+
-    "Telefon: "+phone+"\n"+
-    "E-post: "+email+"\n"+
-    "Tjänst: "+service+"\n\n"+
-    "Beskrivning:\n"+message+"\n\n"+
-    "Med vänliga hälsningar,\n"+name
-  );
+function sendQuote(event) {
 
-  window.location.href="mailto:hazem@renovera360.se?subject="+subject+"&body="+body;
+event.preventDefault();
+
+const name =
+document.getElementById("name").value;
+
+const phone =
+document.getElementById("phone").value;
+
+const email =
+document.getElementById("email").value;
+
+const service =
+document.getElementById("service").value;
+
+const message =
+document.getElementById("message").value;
+
+
+const subject =
+encodeURIComponent(
+"Offertförfrågan – " + service
+);
+
+
+const body =
+encodeURIComponent(
+
+"Hej Renovera360!\n\n" +
+
+"Jag vill gärna få en kostnadsfri offert.\n\n" +
+
+"Namn: " + name + "\n" +
+
+"Telefon: " + phone + "\n" +
+
+"E-post: " + email + "\n" +
+
+"Tjänst: " + service + "\n\n" +
+
+"Beskrivning:\n" +
+
+message +
+
+"\n\nMed vänliga hälsningar,\n" +
+
+name
+
+);
+
+
+window.location.href =
+
+"mailto:hazem@renovera360.se" +
+
+"?subject=" + subject +
+
+"&body=" + body;
+
 }
+
 </script>
+
 
 </body>
 </html>
