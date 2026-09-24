@@ -451,7 +451,7 @@ nav {
   transform: scale(1.04);
 }
 
-/* REVIEW */
+/* REVIEWS */
 
 .reviews {
   background: var(--cream);
@@ -462,9 +462,13 @@ nav {
   margin-bottom: 35px;
 }
 
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+}
+
 .review {
-  max-width: 700px;
-  margin: auto;
   background: white;
   border: 1px solid var(--border);
   padding: 35px;
@@ -482,7 +486,7 @@ nav {
 
 .review blockquote {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 25px;
+  font-size: 22px;
   line-height: 1.45;
 }
 
@@ -646,6 +650,10 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -712,13 +720,10 @@ footer {
 
 <body>
 
-
 <!-- NAVIGATION -->
 
 <header>
-
 <div class="container">
-
 <nav>
 
 <a href="#hem" class="logo">
@@ -727,29 +732,12 @@ RENOVERA<span>360</span>
 
 <ul class="navlinks">
 
-<li>
-<a href="#hem">Hem</a>
-</li>
-
-<li>
-<a href="#omoss">Om oss</a>
-</li>
-
-<li>
-<a href="#tjanster">Tjänster</a>
-</li>
-
-<li>
-<a href="#arbete">Vårt arbete</a>
-</li>
-
-<li>
-<a href="#vinter">Vinterservice</a>
-</li>
-
-<li>
-<a href="#kontakt">Kontakt</a>
-</li>
+<li><a href="#hem">Hem</a></li>
+<li><a href="#omoss">Om oss</a></li>
+<li><a href="#tjanster">Tjänster</a></li>
+<li><a href="#arbete">Vårt arbete</a></li>
+<li><a href="#vinter">Vinterservice</a></li>
+<li><a href="#kontakt">Kontakt</a></li>
 
 <li>
 <a href="#offert" class="contact-top">
@@ -760,11 +748,8 @@ Kontakta oss
 </ul>
 
 </nav>
-
 </div>
-
 </header>
-
 
 <!-- HERO -->
 
@@ -794,11 +779,9 @@ Kontakta oss &nbsp; →
 </a>
 
 </div>
-
 </div>
 
 </section>
-
 
 <!-- TRE CITAT -->
 
@@ -821,7 +804,6 @@ Kontakta oss &nbsp; →
 
 </div>
 
-
 <div class="promise">
 
 <div class="promise-icon">
@@ -834,7 +816,6 @@ Kontakta oss &nbsp; →
 </div>
 
 </div>
-
 
 <div class="promise">
 
@@ -850,11 +831,9 @@ Kontakta oss &nbsp; →
 </div>
 
 </div>
-
 </div>
 
 </section>
-
 
 <!-- OM OSS -->
 
@@ -872,7 +851,6 @@ alt="Hazem Kharboutly, VD Renovera360"
 >
 
 </div>
-
 
 <div class="about-content">
 
@@ -908,11 +886,9 @@ VD, Renovera360
 </div>
 
 </div>
-
 </div>
 
 </section>
-
 
 <!-- TJÄNSTER -->
 
@@ -937,124 +913,66 @@ privatpersoner och företag.
 
 </div>
 
-
 <div class="service-grid">
 
-
 <div class="service">
-
-<div class="service-icon">
-🌿
-</div>
-
-<h3>
-Trädgårdsskötsel
-</h3>
-
+<div class="service-icon">🌿</div>
+<h3>Trädgårdsskötsel</h3>
 <p>
 Gräsklippning, kanttrimning,
 ogräsrensning och löpande skötsel.
 </p>
-
 </div>
-
 
 <div class="service">
-
-<div class="service-icon">
-✂
-</div>
-
-<h3>
-Häckklippning
-</h3>
-
+<div class="service-icon">✂</div>
+<h3>Häckklippning</h3>
 <p>
 Klippning och formning av häckar
 och buskar.
 </p>
-
 </div>
-
 
 <div class="service">
-
-<div class="service-icon">
-◇
-</div>
-
-<h3>
-Fönsterputsning
-</h3>
-
+<div class="service-icon">◇</div>
+<h3>Fönsterputsning</h3>
 <p>
 Rena och klara fönster för hem
 och verksamheter.
 </p>
-
 </div>
-
 
 <div class="service">
-
-<div class="service-icon">
-✓
-</div>
-
-<h3>
-Städning
-</h3>
-
+<div class="service-icon">✓</div>
+<h3>Städning</h3>
 <p>
 Städhjälp anpassad efter bostaden
 eller verksamhetens behov.
 </p>
-
 </div>
-
 
 <div class="service">
-
-<div class="service-icon">
-▣
-</div>
-
-<h3>
-Flytthjälp
-</h3>
-
+<div class="service-icon">▣</div>
+<h3>Flytthjälp</h3>
 <p>
 Hjälp med bärning och praktiska
 moment vid flytten.
 </p>
-
 </div>
-
 
 <div class="service">
-
-<div class="service-icon">
-🚗
-</div>
-
-<h3>
-Biltvätt
-</h3>
-
+<div class="service-icon">🚗</div>
+<h3>Biltvätt</h3>
 <p>
 Smidig hjälp för att hålla bilen
 ren och fräsch.
 </p>
-
 </div>
 
-
 </div>
-
 </div>
 
 </section>
-
 
 <!-- VINTER -->
 
@@ -1087,11 +1005,9 @@ Vinterservice →
 </a>
 
 </div>
-
 </div>
 
 </section>
-
 
 <!-- VÅRT ARBETE -->
 
@@ -1115,173 +1031,135 @@ Riktiga bilder från arbeten vi har utfört.
 
 </div>
 
-
 <div class="gallery">
 
+<div class="gallery-item">
+<img src="images/hero.jpg" alt="Gräsklippning Renovera360">
+</div>
 
 <div class="gallery-item">
-<img
-src="images/hero.jpg"
-alt="Gräsklippning Renovera360"
->
+<img src="images/arbete1.jpg" alt="Trädgårdsarbete Renovera360">
 </div>
-
 
 <div class="gallery-item">
-<img
-src="images/arbete1.jpg"
-alt="Trädgårdsarbete Renovera360"
->
+<img src="images/arbete2.jpg" alt="Gräsklippning i Eskilstuna">
 </div>
-
 
 <div class="gallery-item">
-<img
-src="images/arbete2.jpg"
-alt="Gräsklippning i Eskilstuna"
->
+<img src="images/arbete3.jpg" alt="Trädgårdsskötsel">
 </div>
-
 
 <div class="gallery-item">
-<img
-src="images/arbete3.jpg"
-alt="Trädgårdsskötsel"
->
+<img src="images/arbete4.jpg" alt="Utfört trädgårdsarbete">
 </div>
-
 
 <div class="gallery-item">
-<img
-src="images/arbete4.jpg"
-alt="Utfört trädgårdsarbete"
->
+<img src="images/arbete5.jpg" alt="Gräsmatta efter arbete">
 </div>
-
 
 <div class="gallery-item">
-<img
-src="images/arbete5.jpg"
-alt="Gräsmatta efter arbete"
->
+<img src="images/arbete6.jpg" alt="Renovera360 trädgårdsarbete">
 </div>
 
-
-<div class="gallery-item">
-<img
-src="images/arbete6.jpg"
-alt="Renovera360 trädgårdsarbete"
->
 </div>
-
-
-</div>
-
 </div>
 
 </section>
 
-
-<!-- RECENSION -->
+<!-- RECENSIONER -->
 
 <section class="section reviews">
 
-  <div class="container">
+<div class="container">
 
-    <div class="review-heading">
+<div class="review-heading">
 
-      <div class="eyebrow">
-        Vad våra kunder säger
-      </div>
+<div class="eyebrow">
+Vad våra kunder säger
+</div>
 
-      <h2 class="title">
-        Kundrecensioner
-      </h2>
+<h2 class="title">
+Kundrecensioner
+</h2>
 
-    </div>
+</div>
 
+<div class="review-grid">
 
-    <div class="review-grid">
+<div class="review">
 
-      <div class="review">
+<div class="stars">
+★★★★★
+</div>
 
-        <div class="stars">
-          ★★★★★
-        </div>
+<blockquote>
+“Mycket bra service till ett rimligt pris.
+Nöjd med både bemötandet och resultatet.”
+</blockquote>
 
-        <blockquote>
-          “Mycket bra service till ett rimligt pris.
-          Nöjd med både bemötandet och resultatet.”
-        </blockquote>
+<div class="review-name">
+– Håkan Bolander
+</div>
 
-        <div class="review-name">
-          – Håkan Bolander
-        </div>
+</div>
 
-      </div>
+<div class="review">
 
+<div class="stars">
+★★★★★
+</div>
 
-      <div class="review">
+<blockquote>
+“Smidig och trevlig service. Arbetet blev
+väldigt bra och allt sköttes professionellt.”
+</blockquote>
 
-        <div class="stars">
-          ★★★★★
-        </div>
+<div class="review-name">
+– Anna Andersson
+</div>
 
-        <blockquote>
-          “Smidig och trevlig service. Arbetet blev
-          väldigt bra och allt sköttes professionellt.”
-        </blockquote>
+</div>
 
-        <div class="review-name">
-          – Anna Andersson
-        </div>
+<div class="review">
 
-      </div>
+<div class="stars">
+★★★★★
+</div>
 
+<blockquote>
+“Snabb återkoppling och ett mycket bra resultat.
+Jag är väldigt nöjd med servicen.”
+</blockquote>
 
-      <div class="review">
+<div class="review-name">
+– Erik Karlsson
+</div>
 
-        <div class="stars">
-          ★★★★★
-        </div>
+</div>
 
-        <blockquote>
-          “Snabb återkoppling och ett mycket bra resultat.
-          Jag är väldigt nöjd med servicen.”
-        </blockquote>
+<div class="review">
 
-        <div class="review-name">
-          – Erik Karlsson
-        </div>
+<div class="stars">
+★★★★★
+</div>
 
-      </div>
+<blockquote>
+“Pålitlig och noggrann service från början till slut.
+Kan varmt rekommendera Renovera360.”
+</blockquote>
 
+<div class="review-name">
+– Gunilla Ekvist
+</div>
 
-      <div class="review">
+</div>
 
-        <div class="stars">
-          ★★★★★
-        </div>
-
-        <blockquote>
-          “Pålitlig och noggrann service från början till slut.
-          Kan varmt rekommendera Renovera360.”
-        </blockquote>
-
-        <div class="review-name">
-          – Gunilla Ekvist
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
+</div>
 
 </section>
 
-
-<!-- OFFERT -->
+<!-- OFFERT / FORMSPREE -->
 
 <section class="section quote" id="offert">
 
@@ -1305,12 +1183,11 @@ Berätta vad du behöver hjälp med så återkommer vi.
 
 </div>
 
-
 <form
 class="form"
-onsubmit="sendQuote(event)"
+action="https://formspree.io/f/mqpalzqj"
+method="POST"
 >
-
 
 <div class="group">
 
@@ -1320,13 +1197,13 @@ Namn
 
 <input
 id="name"
+name="name"
 type="text"
 placeholder="Ditt namn"
 required
 >
 
 </div>
-
 
 <div class="group">
 
@@ -1336,13 +1213,13 @@ Telefonnummer
 
 <input
 id="phone"
+name="phone"
 type="tel"
 placeholder="07X XXX XX XX"
 required
 >
 
 </div>
-
 
 <div class="group">
 
@@ -1352,13 +1229,13 @@ E-post
 
 <input
 id="email"
+name="email"
 type="email"
 placeholder="din@email.se"
 required
 >
 
 </div>
-
 
 <div class="group">
 
@@ -1368,6 +1245,7 @@ Vad behöver du hjälp med?
 
 <select
 id="service"
+name="service"
 required
 >
 
@@ -1375,58 +1253,57 @@ required
 Välj tjänst
 </option>
 
-<option>
+<option value="Gräsklippning">
 Gräsklippning
 </option>
 
-<option>
+<option value="Häckklippning">
 Häckklippning
 </option>
 
-<option>
+<option value="Trädgårdsskötsel">
 Trädgårdsskötsel
 </option>
 
-<option>
+<option value="Fönsterputsning">
 Fönsterputsning
 </option>
 
-<option>
+<option value="Städning">
 Städning
 </option>
 
-<option>
+<option value="Flytthjälp">
 Flytthjälp
 </option>
 
-<option>
+<option value="Biltvätt">
 Biltvätt
 </option>
 
-<option>
+<option value="Höststädning">
 Höststädning
 </option>
 
-<option>
+<option value="Snöskottning">
 Snöskottning
 </option>
 
-<option>
+<option value="Halkbekämpning">
 Halkbekämpning
 </option>
 
-<option>
+<option value="Vinterservice">
 Vinterservice
 </option>
 
-<option>
+<option value="Annat">
 Annat
 </option>
 
 </select>
 
 </div>
-
 
 <div class="group full">
 
@@ -1436,12 +1313,18 @@ Beskriv jobbet
 
 <textarea
 id="message"
+name="message"
 placeholder="Berätta kort vad du behöver hjälp med och vilket område jobbet gäller."
 required
 ></textarea>
 
 </div>
 
+<input
+type="hidden"
+name="_subject"
+value="Ny offertförfrågan – Renovera360"
+>
 
 <div class="group full">
 
@@ -1449,22 +1332,17 @@ required
 type="submit"
 class="button"
 >
-
 Skicka offertförfrågan →
-
 </button>
 
 </div>
 
-
 </form>
 
 </div>
-
 </div>
 
 </section>
-
 
 <!-- KONTAKT -->
 
@@ -1473,7 +1351,6 @@ Skicka offertförfrågan →
 <div class="container">
 
 <div class="contact-grid">
-
 
 <div class="contact-item">
 
@@ -1495,7 +1372,6 @@ Telefon
 
 </div>
 
-
 <div class="contact-item">
 
 <div class="contact-symbol">
@@ -1515,7 +1391,6 @@ hazem@renovera360.se
 </div>
 
 </div>
-
 
 <div class="contact-item">
 
@@ -1537,13 +1412,10 @@ Eskilstuna med omnejd
 
 </div>
 
-
 </div>
-
 </div>
 
 </section>
-
 
 <!-- FOOTER -->
 
@@ -1562,74 +1434,6 @@ Vi gör jobbet – så du får tid över.
 </div>
 
 </footer>
-
-
-<script>
-
-function sendQuote(event) {
-
-event.preventDefault();
-
-const name =
-document.getElementById("name").value;
-
-const phone =
-document.getElementById("phone").value;
-
-const email =
-document.getElementById("email").value;
-
-const service =
-document.getElementById("service").value;
-
-const message =
-document.getElementById("message").value;
-
-
-const subject =
-encodeURIComponent(
-"Offertförfrågan – " + service
-);
-
-
-const body =
-encodeURIComponent(
-
-"Hej Renovera360!\n\n" +
-
-"Jag vill gärna få en kostnadsfri offert.\n\n" +
-
-"Namn: " + name + "\n" +
-
-"Telefon: " + phone + "\n" +
-
-"E-post: " + email + "\n" +
-
-"Tjänst: " + service + "\n\n" +
-
-"Beskrivning:\n" +
-
-message +
-
-"\n\nMed vänliga hälsningar,\n" +
-
-name
-
-);
-
-
-window.location.href =
-
-"mailto:hazem@renovera360.se" +
-
-"?subject=" + subject +
-
-"&body=" + body;
-
-}
-
-</script>
-
 
 </body>
 </html>
