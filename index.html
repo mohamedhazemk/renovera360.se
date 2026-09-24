@@ -15,7 +15,6 @@
   --dark: #243427;
   --softgreen: #edf1e9;
   --cream: #f7f5ef;
-  --beige: #eee9df;
   --white: #ffffff;
   --text: #202620;
   --muted: #687068;
@@ -200,7 +199,7 @@ nav {
   transform: translateY(-2px);
 }
 
-/* THREE QUOTES */
+/* CITAT */
 
 .promises {
   margin-top: -42px;
@@ -223,16 +222,6 @@ nav {
   align-items: center;
   padding: 25px;
   box-shadow: var(--shadow);
-  position: relative;
-}
-
-.promise::after {
-  content: "";
-  position: absolute;
-  inset: 7px;
-  border: 1px solid #ebe7de;
-  border-radius: 10px;
-  pointer-events: none;
 }
 
 .promise-icon {
@@ -261,7 +250,7 @@ nav {
   font-size: 18px;
 }
 
-/* ABOUT */
+/* OM OSS */
 
 .about {
   padding-top: 110px;
@@ -286,10 +275,6 @@ nav {
   object-position: center 35%;
 }
 
-.about-content {
-  max-width: 600px;
-}
-
 .about-content .title {
   margin-bottom: 20px;
 }
@@ -308,23 +293,19 @@ nav {
 
 .position {
   font-weight: 800;
-  margin-top: 3px;
 }
 
-/* SERVICES */
+/* TJÄNSTER */
 
 .services {
   background: var(--cream);
 }
 
-.service-header {
+.service-header,
+.work-heading,
+.review-heading {
   text-align: center;
-  max-width: 700px;
-  margin: auto auto 42px;
-}
-
-.service-header .title {
-  margin-bottom: 14px;
+  margin: auto auto 40px;
 }
 
 .service-grid {
@@ -338,12 +319,6 @@ nav {
   padding: 27px;
   border: 1px solid var(--border);
   border-radius: 12px;
-  transition: .2s;
-}
-
-.service:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
 }
 
 .service-icon {
@@ -359,7 +334,7 @@ nav {
 }
 
 .service h3 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, serif;
   font-size: 23px;
   font-weight: 500;
   margin-bottom: 8px;
@@ -370,7 +345,7 @@ nav {
   font-size: 15px;
 }
 
-/* WINTER */
+/* VINTER */
 
 .winter {
   padding: 45px 0;
@@ -378,19 +353,11 @@ nav {
 }
 
 .winter-box {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(232,239,243,.98),
-      rgba(232,239,243,.85)
-    );
-
   border: 1px solid #d5e0e6;
   border-radius: 15px;
   padding: 38px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 35px;
 }
 
@@ -398,34 +365,17 @@ nav {
   font-size: 45px;
 }
 
-.winter h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 32px;
-  font-weight: 500;
-}
-
-.winter p {
-  color: #5f696e;
-}
-
 .winter-text {
   flex: 1;
 }
 
-/* WORK */
-
-.work {
-  background: white;
+.winter h2 {
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
 }
 
-.work-heading {
-  text-align: center;
-  margin-bottom: 38px;
-}
-
-.work-heading .title {
-  margin-bottom: 10px;
-}
+/* VÅRT ARBETE */
 
 .gallery {
   display: grid;
@@ -440,26 +390,18 @@ nav {
   background: #eee;
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: .35s;
+  display: block;
 }
 
-.gallery-item:hover img {
-  transform: scale(1.04);
-}
-
-/* REVIEWS */
+/* RECENSIONER */
 
 .reviews {
   background: var(--cream);
-}
-
-.review-heading {
-  text-align: center;
-  margin-bottom: 35px;
 }
 
 .review-grid {
@@ -473,7 +415,6 @@ nav {
   border: 1px solid var(--border);
   padding: 35px;
   border-radius: 14px;
-  box-shadow: 0 8px 25px rgba(0,0,0,.04);
   text-align: center;
 }
 
@@ -481,13 +422,12 @@ nav {
   color: var(--green);
   font-size: 21px;
   letter-spacing: 4px;
-  margin-bottom: 17px;
 }
 
 .review blockquote {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, serif;
   font-size: 22px;
-  line-height: 1.45;
+  margin-top: 15px;
 }
 
 .review-name {
@@ -496,11 +436,7 @@ nav {
   color: var(--green);
 }
 
-/* QUOTE FORM */
-
-.quote {
-  background: white;
-}
+/* FORMULÄR */
 
 .quote-box {
   max-width: 900px;
@@ -517,13 +453,9 @@ nav {
 }
 
 .quote-title h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, serif;
   font-size: 42px;
   font-weight: 500;
-}
-
-.quote-title p {
-  color: var(--muted);
 }
 
 .form {
@@ -543,26 +475,18 @@ nav {
 }
 
 label {
-  font-size: 14px;
   font-weight: 800;
+  font-size: 14px;
 }
 
 input,
 select,
 textarea {
   width: 100%;
-  border: 1px solid #cbc9c2;
-  background: white;
   padding: 14px;
+  border: 1px solid #cbc9c2;
   border-radius: 8px;
   font: inherit;
-  outline: none;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: var(--green);
 }
 
 textarea {
@@ -570,7 +494,7 @@ textarea {
   resize: vertical;
 }
 
-/* CONTACT */
+/* KONTAKT */
 
 .contact {
   background: var(--green);
@@ -604,7 +528,6 @@ textarea {
 
 .contact-item small {
   display: block;
-  opacity: .8;
 }
 
 .contact-item a {
@@ -624,12 +547,10 @@ footer {
 .footer {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
   flex-wrap: wrap;
-  font-size: 14px;
 }
 
-/* MOBILE */
+/* MOBIL */
 
 @media(max-width:900px) {
 
@@ -646,18 +567,14 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-
+  .gallery,
   .review-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .contact-grid {
     grid-template-columns: 1fr;
   }
-
 }
 
 @media(max-width:650px) {
@@ -666,28 +583,16 @@ footer {
     min-height: 670px;
     align-items: flex-end;
     padding-bottom: 100px;
-
-    background:
-      linear-gradient(
-        0deg,
-        rgba(255,255,255,.98) 0%,
-        rgba(255,255,255,.88) 50%,
-        rgba(255,255,255,.15) 100%
-      ),
-      url("images/hero.jpg") center / cover no-repeat;
   }
 
   .hero h1 {
     font-size: 52px;
   }
 
-  .promises {
-    margin-top: -55px;
-  }
-
   .promise-grid,
   .service-grid,
   .gallery,
+  .review-grid,
   .form {
     grid-template-columns: 1fr;
   }
@@ -712,7 +617,6 @@ footer {
   .quote-box {
     padding: 27px 18px;
   }
-
 }
 
 </style>
@@ -720,31 +624,20 @@ footer {
 
 <body>
 
-<!-- NAVIGATION -->
-
 <header>
 <div class="container">
 <nav>
 
-<a href="#hem" class="logo">
-RENOVERA<span>360</span>
-</a>
+<a href="#hem" class="logo">RENOVERA<span>360</span></a>
 
 <ul class="navlinks">
-
 <li><a href="#hem">Hem</a></li>
 <li><a href="#omoss">Om oss</a></li>
 <li><a href="#tjanster">Tjänster</a></li>
 <li><a href="#arbete">Vårt arbete</a></li>
 <li><a href="#vinter">Vinterservice</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
-
-<li>
-<a href="#offert" class="contact-top">
-Kontakta oss
-</a>
-</li>
-
+<li><a href="#offert" class="contact-top">Kontakta oss</a></li>
 </ul>
 
 </nav>
@@ -754,14 +647,10 @@ Kontakta oss
 <!-- HERO -->
 
 <section class="hero" id="hem">
-
 <div class="container">
-
 <div class="hero-content">
 
-<div class="hero-small">
-RENOVERA360
-</div>
+<div class="hero-small">RENOVERA360</div>
 
 <h1>
 Vi hjälper dig<br>
@@ -780,83 +669,55 @@ Kontakta oss &nbsp; →
 
 </div>
 </div>
-
 </section>
 
-<!-- TRE CITAT -->
+<!-- CITAT -->
 
 <section class="promises">
-
 <div class="container">
-
 <div class="promise-grid">
 
 <div class="promise">
-
-<div class="promise-icon">
-⌂
-</div>
-
+<div class="promise-icon">⌂</div>
 <div>
 <strong>Din vardag.</strong>
 <em>Lite enklare.</em>
 </div>
-
 </div>
 
 <div class="promise">
-
-<div class="promise-icon">
-⚒
-</div>
-
+<div class="promise-icon">⚒</div>
 <div>
 <strong>När jobbet</strong>
 <em>behöver bli gjort.</em>
 </div>
-
 </div>
 
 <div class="promise">
-
-<div class="promise-icon">
-✓
-</div>
-
+<div class="promise-icon">✓</div>
 <div>
 <strong>Pålitlig hjälp,</strong>
 <em>när du behöver den.</em>
 </div>
-
 </div>
 
 </div>
 </div>
-
 </section>
 
 <!-- OM OSS -->
 
 <section class="section about" id="omoss">
-
 <div class="container">
-
 <div class="about-grid">
 
 <div class="about-image">
-
-<img
-src="images/vd.jpg"
-alt="Hazem Kharboutly, VD Renovera360"
->
-
+<img src="images/vd.jpg" alt="Hazem Kharboutly, VD Renovera360">
 </div>
 
 <div class="about-content">
 
-<div class="eyebrow">
-Om oss
-</div>
+<div class="eyebrow">Om oss</div>
 
 <h2 class="title">
 Personlig service<br>
@@ -865,8 +726,8 @@ du kan lita på
 
 <p class="text">
 Renovera360 är ett lokalt serviceföretag i Eskilstuna.
-Vårt mål är att göra det enklare för privatpersoner
-och företag att få hjälp med det praktiska.
+Vårt mål är att göra det enklare för privatpersoner och företag
+att få hjälp med det praktiska.
 </p>
 
 <p class="text">
@@ -875,42 +736,25 @@ vill vi skapa långsiktiga kundrelationer och leverera
 ett resultat vi kan stå bakom.
 </p>
 
-<div class="name">
-Hazem Kharboutly
-</div>
-
-<div class="position">
-VD, Renovera360
-</div>
-
-</div>
+<div class="name">Hazem Kharboutly</div>
+<div class="position">VD, Renovera360</div>
 
 </div>
 </div>
-
+</div>
 </section>
 
 <!-- TJÄNSTER -->
 
 <section class="section services" id="tjanster">
-
 <div class="container">
 
 <div class="service-header">
-
-<div class="eyebrow">
-Våra tjänster
-</div>
-
-<h2 class="title">
-Hjälp när du behöver den
-</h2>
-
+<div class="eyebrow">Våra tjänster</div>
+<h2 class="title">Hjälp när du behöver den</h2>
 <p class="text">
-Vi erbjuder flexibla lösningar för både
-privatpersoner och företag.
+Vi erbjuder flexibla lösningar för både privatpersoner och företag.
 </p>
-
 </div>
 
 <div class="service-grid">
@@ -918,86 +762,58 @@ privatpersoner och företag.
 <div class="service">
 <div class="service-icon">🌿</div>
 <h3>Trädgårdsskötsel</h3>
-<p>
-Gräsklippning, kanttrimning,
-ogräsrensning och löpande skötsel.
-</p>
+<p>Gräsklippning, kanttrimning, ogräsrensning och löpande skötsel.</p>
 </div>
 
 <div class="service">
 <div class="service-icon">✂</div>
 <h3>Häckklippning</h3>
-<p>
-Klippning och formning av häckar
-och buskar.
-</p>
+<p>Klippning och formning av häckar och buskar.</p>
 </div>
 
 <div class="service">
 <div class="service-icon">◇</div>
 <h3>Fönsterputsning</h3>
-<p>
-Rena och klara fönster för hem
-och verksamheter.
-</p>
+<p>Rena och klara fönster för hem och verksamheter.</p>
 </div>
 
 <div class="service">
 <div class="service-icon">✓</div>
 <h3>Städning</h3>
-<p>
-Städhjälp anpassad efter bostaden
-eller verksamhetens behov.
-</p>
+<p>Städhjälp anpassad efter bostaden eller verksamhetens behov.</p>
 </div>
 
 <div class="service">
 <div class="service-icon">▣</div>
 <h3>Flytthjälp</h3>
-<p>
-Hjälp med bärning och praktiska
-moment vid flytten.
-</p>
+<p>Hjälp med bärning och praktiska moment vid flytten.</p>
 </div>
 
 <div class="service">
 <div class="service-icon">🚗</div>
 <h3>Biltvätt</h3>
-<p>
-Smidig hjälp för att hålla bilen
-ren och fräsch.
-</p>
+<p>Smidig hjälp för att hålla bilen ren och fräsch.</p>
 </div>
 
 </div>
 </div>
-
 </section>
 
 <!-- VINTER -->
 
 <section class="winter" id="vinter">
-
 <div class="container">
 
 <div class="winter-box">
 
-<div class="winter-icon">
-❄
-</div>
+<div class="winter-icon">❄</div>
 
 <div class="winter-text">
-
-<h2>
-Redo för vintern?
-</h2>
-
+<h2>Redo för vintern?</h2>
 <p>
-Vi hjälper dig att hålla uppfarter,
-gångvägar och entréer säkra under vintern
-med snöskottning och halkbekämpning.
+Vi hjälper dig att hålla uppfarter, gångvägar och entréer
+säkra under vintern med snöskottning och halkbekämpning.
 </p>
-
 </div>
 
 <a href="#offert" class="button">
@@ -1006,27 +822,23 @@ Vinterservice →
 
 </div>
 </div>
-
 </section>
 
 <!-- VÅRT ARBETE -->
 
 <section class="section work" id="arbete">
-
 <div class="container">
 
 <div class="work-heading">
 
-<div class="eyebrow">
-Vårt arbete
-</div>
+<div class="eyebrow">Vårt arbete</div>
 
 <h2 class="title">
 Några av våra uppdrag
 </h2>
 
 <p class="text">
-Riktiga bilder från arbeten vi har utfört.
+Riktiga bilder och video från arbeten vi har utfört.
 </p>
 
 </div>
@@ -1043,6 +855,15 @@ Riktiga bilder från arbeten vi har utfört.
 
 <div class="gallery-item">
 <img src="images/arbete2.jpg" alt="Gräsklippning i Eskilstuna">
+</div>
+
+<!-- VIDEO -->
+
+<div class="gallery-item">
+<video controls playsinline preload="metadata">
+<source src="images/arbete-video.mp4" type="video/mp4">
+Din webbläsare stöder inte video.
+</video>
 </div>
 
 <div class="gallery-item">
@@ -1063,119 +884,71 @@ Riktiga bilder från arbeten vi har utfört.
 
 </div>
 </div>
-
 </section>
 
 <!-- RECENSIONER -->
 
 <section class="section reviews">
-
 <div class="container">
 
 <div class="review-heading">
-
-<div class="eyebrow">
-Vad våra kunder säger
-</div>
-
-<h2 class="title">
-Kundrecensioner
-</h2>
-
+<div class="eyebrow">Vad våra kunder säger</div>
+<h2 class="title">Kundrecensioner</h2>
 </div>
 
 <div class="review-grid">
 
 <div class="review">
-
-<div class="stars">
-★★★★★
-</div>
-
+<div class="stars">★★★★★</div>
 <blockquote>
 “Mycket bra service till ett rimligt pris.
 Nöjd med både bemötandet och resultatet.”
 </blockquote>
-
-<div class="review-name">
-– Håkan Bolander
-</div>
-
+<div class="review-name">– Håkan Bolander</div>
 </div>
 
 <div class="review">
-
-<div class="stars">
-★★★★★
-</div>
-
+<div class="stars">★★★★★</div>
 <blockquote>
-“Smidig och trevlig service. Arbetet blev
-väldigt bra och allt sköttes professionellt.”
+“Smidig och trevlig service. Arbetet blev väldigt bra
+och allt sköttes professionellt.”
 </blockquote>
-
-<div class="review-name">
-– Anna Andersson
-</div>
-
+<div class="review-name">– Anna Andersson</div>
 </div>
 
 <div class="review">
-
-<div class="stars">
-★★★★★
-</div>
-
+<div class="stars">★★★★★</div>
 <blockquote>
 “Snabb återkoppling och ett mycket bra resultat.
 Jag är väldigt nöjd med servicen.”
 </blockquote>
-
-<div class="review-name">
-– Erik Karlsson
-</div>
-
+<div class="review-name">– Erik Karlsson</div>
 </div>
 
 <div class="review">
-
-<div class="stars">
-★★★★★
-</div>
-
+<div class="stars">★★★★★</div>
 <blockquote>
 “Pålitlig och noggrann service från början till slut.
 Kan varmt rekommendera Renovera360.”
 </blockquote>
-
-<div class="review-name">
-– Gunilla Ekvist
-</div>
-
+<div class="review-name">– Gunilla Ekvist</div>
 </div>
 
 </div>
 </div>
-
 </section>
 
-<!-- OFFERT / FORMSPREE -->
+<!-- OFFERT -->
 
 <section class="section quote" id="offert">
-
 <div class="container">
-
 <div class="quote-box">
 
 <div class="quote-title">
 
-<div class="eyebrow">
-Kontakta oss
-</div>
+<div class="eyebrow">Kontakta oss</div>
 
-<h2>
-Begär kostnadsfri offert
-</h2>
+<h2>Begär kostnadsfri offert</h2>
 
 <p>
 Berätta vad du behöver hjälp med så återkommer vi.
@@ -1191,9 +964,7 @@ method="POST"
 
 <div class="group">
 
-<label for="name">
-Namn
-</label>
+<label for="name">Namn</label>
 
 <input
 id="name"
@@ -1207,9 +978,7 @@ required
 
 <div class="group">
 
-<label for="phone">
-Telefonnummer
-</label>
+<label for="phone">Telefonnummer</label>
 
 <input
 id="phone"
@@ -1223,9 +992,7 @@ required
 
 <div class="group">
 
-<label for="email">
-E-post
-</label>
+<label for="email">E-post</label>
 
 <input
 id="email"
@@ -1243,63 +1010,21 @@ required
 Vad behöver du hjälp med?
 </label>
 
-<select
-id="service"
-name="service"
-required
->
+<select id="service" name="service" required>
 
-<option value="">
-Välj tjänst
-</option>
-
-<option value="Gräsklippning">
-Gräsklippning
-</option>
-
-<option value="Häckklippning">
-Häckklippning
-</option>
-
-<option value="Trädgårdsskötsel">
-Trädgårdsskötsel
-</option>
-
-<option value="Fönsterputsning">
-Fönsterputsning
-</option>
-
-<option value="Städning">
-Städning
-</option>
-
-<option value="Flytthjälp">
-Flytthjälp
-</option>
-
-<option value="Biltvätt">
-Biltvätt
-</option>
-
-<option value="Höststädning">
-Höststädning
-</option>
-
-<option value="Snöskottning">
-Snöskottning
-</option>
-
-<option value="Halkbekämpning">
-Halkbekämpning
-</option>
-
-<option value="Vinterservice">
-Vinterservice
-</option>
-
-<option value="Annat">
-Annat
-</option>
+<option value="">Välj tjänst</option>
+<option value="Gräsklippning">Gräsklippning</option>
+<option value="Häckklippning">Häckklippning</option>
+<option value="Trädgårdsskötsel">Trädgårdsskötsel</option>
+<option value="Fönsterputsning">Fönsterputsning</option>
+<option value="Städning">Städning</option>
+<option value="Flytthjälp">Flytthjälp</option>
+<option value="Biltvätt">Biltvätt</option>
+<option value="Höststädning">Höststädning</option>
+<option value="Snöskottning">Snöskottning</option>
+<option value="Halkbekämpning">Halkbekämpning</option>
+<option value="Vinterservice">Vinterservice</option>
+<option value="Annat">Annat</option>
 
 </select>
 
@@ -1328,10 +1053,7 @@ value="Ny offertförfrågan – Renovera360"
 
 <div class="group full">
 
-<button
-type="submit"
-class="button"
->
+<button type="submit" class="button">
 Skicka offertförfrågan →
 </button>
 
@@ -1341,83 +1063,45 @@ Skicka offertförfrågan →
 
 </div>
 </div>
-
 </section>
 
 <!-- KONTAKT -->
 
 <section class="contact" id="kontakt">
-
 <div class="container">
-
 <div class="contact-grid">
 
 <div class="contact-item">
-
-<div class="contact-symbol">
-☎
-</div>
-
+<div class="contact-symbol">☎</div>
 <div>
-
-<small>
-Telefon
-</small>
-
+<small>Telefon</small>
 <a href="tel:+46763964804">
 076 396 48 04
 </a>
-
 </div>
-
 </div>
 
 <div class="contact-item">
-
-<div class="contact-symbol">
-✉
-</div>
-
+<div class="contact-symbol">✉</div>
 <div>
-
-<small>
-E-post
-</small>
-
+<small>E-post</small>
 <a href="mailto:hazem@renovera360.se">
 hazem@renovera360.se
 </a>
-
 </div>
-
 </div>
 
 <div class="contact-item">
-
-<div class="contact-symbol">
-⌖
-</div>
-
+<div class="contact-symbol">⌖</div>
 <div>
-
-<small>
-Vi finns i
-</small>
-
-<strong>
-Eskilstuna med omnejd
-</strong>
-
+<small>Vi finns i</small>
+<strong>Eskilstuna med omnejd</strong>
 </div>
-
 </div>
 
 </div>
 </div>
-
 </section>
-
-<!-- FOOTER -->
 
 <footer>
 
